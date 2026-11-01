@@ -1,0 +1,22 @@
+ÍCONES PNG — SISTEMA HELPDESK
+Todos os arquivos têm fundo transparente.
+Azuis: #0078E7
+Brancos: para usar sobre o painel azul.
+
+Tamanhos:
+18 px — ícones pequenos dentro dos campos.
+20 px — ícones de campos e ações.
+32 px — logotipo/ícone principal.
+64 px — ilustração decorativa maior.
+
+Sugestão:
+- usuario_20px.png
+- email_20px.png
+- senha_20px.png
+- telefone_20px.png
+- olho_18px.png
+- suporte_32px.png
+- notebook_64px.png
+- seguranca_20px.png
+- voltar_20px.png
+- entrar_20px.png
