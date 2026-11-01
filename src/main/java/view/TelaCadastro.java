@@ -121,7 +121,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         jTextField5.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(846, 630));
         getContentPane().setLayout(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -232,7 +231,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel45)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         jPanelFundoCinza3.setBackground(new java.awt.Color(243, 247, 251));
@@ -294,7 +293,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
 
         jLabel41.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel41.setForeground(new java.awt.Color(204, 204, 204));
 
         AvisoNome.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         AvisoNome.setForeground(new java.awt.Color(255, 0, 51));
@@ -460,7 +458,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         jComboSetor.setForeground(new java.awt.Color(0, 0, 0));
         jComboSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "       ", "Administração", "Informática", "Recursos Humanos", "Comercial/Vendas", "Marketing", "Logística", "Operacional", "Outros..." }));
         jComboSetor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jComboSetor.setPreferredSize(new java.awt.Dimension(142, 26));
         jComboSetor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboSetorActionPerformed(evt);
@@ -527,10 +524,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(jLabelEmail3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(AvisoSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
-                                .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
                                 .addComponent(jLabelEmail5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -554,8 +548,11 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))))
                     .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(caixaTermo)))
-                .addContainerGap(596, Short.MAX_VALUE))
+                        .addComponent(caixaTermo))
+                    .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(597, Short.MAX_VALUE))
         );
         jPanelFundoCinza3Layout.setVerticalGroup(
             jPanelFundoCinza3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,10 +604,10 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(caixaTermo)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelFundoCinza3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonCadastrar)
-                    .addComponent(buttonLimpar))
-                .addGap(347, 347, 347)
+                .addComponent(buttonCadastrar)
+                .addGap(12, 12, 12)
+                .addComponent(buttonLimpar)
+                .addGap(301, 301, 301)
                 .addComponent(jLabel41)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
