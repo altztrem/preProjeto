@@ -16,6 +16,8 @@ public class DataUsuario {
     private String setor;
     private String senhaHash;
     private String telefone;
+    public  static String SessaoUsuario;
+
 
     public DataUsuario() {
     }
@@ -85,5 +87,14 @@ public class DataUsuario {
         this.telefone = telefone;
     }
     
-    
+     
+    public static String getSessaoUsuario() {
+       return  SessaoUsuario;
+        
+    }
+
+    public static void setSessaoUsuario(String login) {
+        SessaoUsuario = login;
+        
+    }
 }

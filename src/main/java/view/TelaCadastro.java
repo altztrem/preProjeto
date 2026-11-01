@@ -700,6 +700,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             setVisible(false);
             TelaPrincipal TelaPrincipal = new TelaPrincipal();
             TelaPrincipal.setVisible(true);
+            this.dispose();
         
         
         }

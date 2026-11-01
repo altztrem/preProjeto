@@ -5,6 +5,7 @@
 package view;
 
 import dao.UsuarioDao;
+import entities.DataUsuario;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -21,6 +22,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private ImageIcon olhoAberto;
     private ImageIcon olhoFechado;
     private boolean olhoVisivel;
+   DataUsuario dtUser =  new DataUsuario();
+    
     
     
     
@@ -35,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         olhoAberto = new ImageIcon(getClass().getResource("/IconesAzul/olho_20px.png"));
         olhoFechado = new ImageIcon(getClass().getResource("/IconesAzul/olho_fechado.png"));
-  
+        
 
         
     }
@@ -93,6 +96,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(693, 523));
         getContentPane().setLayout(null);
 
         jPanelFundoBranco.setBackground(new java.awt.Color(243, 247, 251));
@@ -446,10 +450,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegistreseMouseClicked
 
     private void buttonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrarActionPerformed
-    verifLogin();
-     char[] senha = txtSenha.getPassword();
+            verifLogin();
+            
+            dtUser.setSessaoUsuario(txtLogin.getText().trim());
+            
+            char[] senha = txtSenha.getPassword();
             String senhaTexto = new String(senha);
-    UsuarioDao dao  = new UsuarioDao();
+            UsuarioDao dao  = new UsuarioDao();
+            
     if(dao.checkLogin(txtLogin.getText(),senhaTexto,txtLogin.getText() )){
         
         setVisible(false);
@@ -483,7 +491,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if(verif==false){
             return;
         }
-
+        
 }
     private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
         // TODO add your handling code here:
@@ -574,5 +582,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
+
+    String getSessaoUsuario() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
    }
