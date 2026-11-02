@@ -453,7 +453,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             verifLogin();
             
             dtUser.setSessaoUsuario(txtLogin.getText().trim());
-            
             char[] senha = txtSenha.getPassword();
             String senhaTexto = new String(senha);
             UsuarioDao dao  = new UsuarioDao();

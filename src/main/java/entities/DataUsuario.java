@@ -9,7 +9,7 @@ package entities;
  * @author gablinux
  */
 public class DataUsuario {
-    private Long idUsuario;
+    public static int idUsuario;
     private String nome;
     private String email;
     private String perfil;
@@ -29,11 +29,11 @@ public class DataUsuario {
         this.telefone = telefone;
     }
 
-    public Long getIdUsuario() {
+    public int getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
 

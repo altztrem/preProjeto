@@ -2,6 +2,7 @@
 package dao;
 
 import connection.ConnectionFactory;
+import entities.DataChamado;
 import entities.DataUsuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +13,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class UsuarioDao {
+    DataChamado dtChamado = new DataChamado();
+    DataUsuario dtUsuario = new DataUsuario();
     
-    public void create(DataUsuario d){
+    public void CriarCadastro(DataUsuario d){
       
             Connection con = ConnectionFactory.getConnection();
             PreparedStatement stmt = null;
+  
               try {
             stmt = con.prepareStatement("INSERT INTO usuario(nome,email,senhaHash,perfil,setor,telefone) VALUES (?,?,?,?,?,?)");
             stmt.setString(1, d.getNome());
@@ -28,6 +32,9 @@ public class UsuarioDao {
             
             
             stmt.executeUpdate();
+            
+            
+            
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso !");
         } catch (SQLException ex) {
@@ -59,10 +66,12 @@ public class UsuarioDao {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-
-                
                 check = true;
+                dtUsuario.idUsuario = rs.getInt("idUsuario");
+           
+            JOptionPane.showMessageDialog(null, "id no login: " + dtUsuario.idUsuario);
             }
+           
                 
         } catch (SQLException ex) {
           

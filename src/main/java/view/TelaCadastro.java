@@ -29,6 +29,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCadastro.class.getName());
 
     public TelaCadastro() {
+        setSize(846, 630);
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -215,7 +216,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(6, 6, 6))
                     .addComponent(jLabel37))
@@ -524,7 +525,10 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(jLabelEmail3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(AvisoSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
+                                .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
                                 .addComponent(jLabelEmail5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -548,11 +552,8 @@ public class TelaCadastro extends javax.swing.JFrame {
                                 .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))))
                     .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(caixaTermo))
-                    .addGroup(jPanelFundoCinza3Layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(buttonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(597, Short.MAX_VALUE))
+                        .addComponent(caixaTermo)))
+                .addContainerGap(590, Short.MAX_VALUE))
         );
         jPanelFundoCinza3Layout.setVerticalGroup(
             jPanelFundoCinza3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -604,10 +605,10 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(caixaTermo)
                 .addGap(18, 18, 18)
-                .addComponent(buttonCadastrar)
-                .addGap(12, 12, 12)
-                .addComponent(buttonLimpar)
-                .addGap(301, 301, 301)
+                .addGroup(jPanelFundoCinza3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonCadastrar)
+                    .addComponent(buttonLimpar))
+                .addGap(347, 347, 347)
                 .addComponent(jLabel41)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -867,7 +868,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             inf.setSetor((String) jComboSetor.getSelectedItem());
                 
             UsuarioDao dao = new UsuarioDao();
-            dao.create(inf);
+            dao.CriarCadastro(inf);
             
         }else if(!caixaTermo.isSelected()){
         

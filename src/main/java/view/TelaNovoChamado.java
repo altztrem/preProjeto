@@ -4,6 +4,7 @@
  */
 package view;
 
+import dao.ChamadoDao;
 import dao.UsuarioDao;
 import entities.DataChamado;
 import entities.DataUsuario;
@@ -18,10 +19,17 @@ public class TelaNovoChamado extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaNovoChamado.class.getName());
         DataUsuario dtUser =  new DataUsuario();
         DataChamado dtChamado = new DataChamado();
+        ChamadoDao dao = new ChamadoDao();
+     
        
     public TelaNovoChamado() {
+        setLocationRelativeTo(null);
         initComponents();
-        nomeUsuario.setText( "Olá, "+ dtUser.getSessaoUsuario());
+        setSize(1501, 744);
+         DataUsuario dtUser =  new DataUsuario();
+        NomeUsuario.setText( "Olá, "+ dtUser.getSessaoUsuario());
+        txtNome1.setText(dtUser.getSessaoUsuario());
+        
     }
 
     /**
@@ -72,7 +80,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        nomeUsuario = new javax.swing.JLabel();
+        NomeUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -473,6 +481,11 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         ButtonLimpar.setForeground(new java.awt.Color(56, 84, 119));
         ButtonLimpar.setText("Limpar campos");
+        ButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonLimparActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
@@ -524,8 +537,8 @@ public class TelaNovoChamado extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonEnviarChamado, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -612,10 +625,10 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(33, 134, 230));
         jLabel6.setText("l");
 
-        nomeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nomeUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        nomeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/male_user_50px.png"))); // NOI18N
-        nomeUsuario.setText(" Olá, Admin");
+        NomeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NomeUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        NomeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/male_user_50px.png"))); // NOI18N
+        NomeUsuario.setText(" Olá, Admin");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -626,9 +639,9 @@ public class TelaNovoChamado extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1168, Short.MAX_VALUE)
-                .addComponent(nomeUsuario)
-                .addGap(245, 245, 245))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1250, Short.MAX_VALUE)
+                .addComponent(NomeUsuario)
+                .addGap(163, 163, 163))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,7 +651,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
             .addComponent(jLabel6)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(nomeUsuario)
+                .addComponent(NomeUsuario)
                 .addContainerGap())
         );
 
@@ -677,7 +690,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1485, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1501, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -845,10 +858,23 @@ public class TelaNovoChamado extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void ButtonEnviarChamadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEnviarChamadoActionPerformed
+        verif();
        dtChamado.setTitulo(txtTitulo.getText());
        dtChamado.setDescricao(txtDescricao.getText());
+       dtChamado.setCategoria((String) jComboCategoria.getSelectedItem());
+       dtChamado.setPrioridade((String) jComboPrioridade.getSelectedItem());
+       dao.CriarChamado(dtChamado,dtUser);
+      
        
     }//GEN-LAST:event_ButtonEnviarChamadoActionPerformed
+
+    private void ButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLimparActionPerformed
+        txtTitulo.setText("");
+        txtDescricao.setText("");
+        jComboCategoria.setSelectedIndex(0);
+        jComboPrioridade.setSelectedIndex(0);
+
+    }//GEN-LAST:event_ButtonLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -874,6 +900,39 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TelaNovoChamado().setVisible(true));
     }
+    
+    public void verif(){
+        boolean verif = true;
+       
+    if(jComboCategoria.getSelectedIndex()==0){
+    verif = !verif;
+    JOptionPane.showMessageDialog(null, "Selecione a Categoria");
+    
+    }
+    
+    if(jComboPrioridade.getSelectedIndex()==0){
+    verif = !verif;
+      JOptionPane.showMessageDialog(null, "Selecione a prioridade");
+    }
+    
+    if(txtTitulo.getText().length()<=0){
+    verif = !verif; 
+    JOptionPane.showMessageDialog(null, "Insira um titulo");
+    
+    }
+    if(txtDescricao.getText().length()<=0){
+    verif = !verif;
+    JOptionPane.showMessageDialog(null, "Insira uma Descrição");
+    
+    }
+    
+    if(verif==!verif){
+    return;
+    }
+    
+    
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraLateral2;
@@ -881,6 +940,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
     private javax.swing.JButton ButtonEnviarChamado;
     private javax.swing.JButton ButtonLimpar;
     private javax.swing.JPanel JPanelInicio;
+    private javax.swing.JLabel NomeUsuario;
     private javax.swing.JComboBox<String> jComboCategoria;
     private javax.swing.JComboBox<String> jComboPrioridade;
     private javax.swing.JLabel jLabel1;
@@ -912,7 +972,6 @@ public class TelaNovoChamado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelSair;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jTitulo;
-    private javax.swing.JLabel nomeUsuario;
     private javax.swing.JTextArea txtDescricao;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtTitulo;

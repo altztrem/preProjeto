@@ -7,25 +7,25 @@ import java.time.LocalDateTime;
 public class DataChamado {
     
     //chave estrangeira INICIO
-    private Long idCategoria;
-    private Long idUsuario;
+    public static int idUsuario;
     //chave estrangeira FIM
+
     
     
     
-    private Long idChamado;
+    private int idChamado;
     private String titulo;
     private String descricao;
     private String statusChamado;
+    private String categoria;
     private String prioridade;
     private LocalDateTime dataAbertura;
     private LocalDateTime dataFechadura;
-
     public DataChamado() {
     }
 
-    public DataChamado(Long idCategoria, Long idUsuario, Long idChamado, String titulo, String descricao, String status, String prioridade, LocalDateTime dataAbertura) {
-        this.idCategoria = idCategoria;
+    public DataChamado(Long idCategoria, int idUsuario, int idChamado, String titulo, String descricao, String status, String prioridade, LocalDateTime dataAbertura, String categoria) {
+        this.categoria = categoria;
         this.idUsuario = idUsuario;
         this.idChamado = idChamado;
         this.titulo = titulo;
@@ -34,28 +34,37 @@ public class DataChamado {
         this.prioridade = prioridade;
         this.dataAbertura = LocalDateTime.now();
     }
-
-    public Long getIdCategoria() {
-        return idCategoria;
+    
+    
+    public String getStatusChamado() {
+        return statusChamado;
     }
 
-    public void setIdCategoria(Long idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setStatusChamado(String statusChamado) {
+        this.statusChamado = statusChamado;
     }
 
-    public Long getIdUsuario() {
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
 
-    public Long getIdChamado() {
+    public int getIdChamado() {
         return idChamado;
     }
 
-    public void setIdChamado(Long idChamado) {
+    public void setIdChamado(int idChamado) {
         this.idChamado = idChamado;
     }
 
@@ -107,16 +116,6 @@ public class DataChamado {
         this.dataFechadura = dataFechadura;
     }
 
-    public DataChamado(Long idCategoria, Long idUsuario, Long idChamado, String titulo, String descricao, String statusChamado, String prioridade, LocalDateTime dataAbertura, LocalDateTime dataFechadura) {
-        this.idCategoria = idCategoria;
-        this.idUsuario = idUsuario;
-        this.idChamado = idChamado;
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.statusChamado = statusChamado;
-        this.prioridade = prioridade;
-        this.dataAbertura = dataAbertura;
-        this.dataFechadura = dataFechadura;
-    }
+   
     
 }
