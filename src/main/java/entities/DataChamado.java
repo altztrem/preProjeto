@@ -19,12 +19,12 @@ public class DataChamado {
     private String statusChamado;
     private String categoria;
     private String prioridade;
-    private LocalDateTime dataAbertura;
-    private LocalDateTime dataFechadura;
+    private String dataAbertura;
+    private String dataFechadura;
     public DataChamado() {
     }
 
-    public DataChamado(Long idCategoria, int idUsuario, int idChamado, String titulo, String descricao, String status, String prioridade, LocalDateTime dataAbertura, String categoria) {
+    public DataChamado(Long idCategoria, int idUsuario, int idChamado, String titulo, String descricao, String status, String prioridade, String dataAbertura, String categoria) {
         this.categoria = categoria;
         this.idUsuario = idUsuario;
         this.idChamado = idChamado;
@@ -32,7 +32,7 @@ public class DataChamado {
         this.descricao = descricao;
         this.statusChamado = status;
         this.prioridade = prioridade;
-        this.dataAbertura = LocalDateTime.now();
+        this.dataAbertura = dataAbertura;
     }
     
     
@@ -100,19 +100,19 @@ public class DataChamado {
         this.prioridade = prioridade;
     }
 
-    public LocalDateTime getDataAbertura() {
+    public String getDataAbertura() {
         return dataAbertura;
     }
 
-    public void setDataAbertura(LocalDateTime dataAbertura) {
+    public void setDataAbertura(String dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
 
-    public LocalDateTime getDataFechadura() {
+    public String getDataFechadura() {
         return dataFechadura;
     }
 
-    public void setDataFechadura(LocalDateTime dataFechadura) {
+    public void setDataFechadura(String dataFechadura) {
         this.dataFechadura = dataFechadura;
     }
 

@@ -864,7 +864,8 @@ public class TelaNovoChamado extends javax.swing.JFrame {
        dtChamado.setCategoria((String) jComboCategoria.getSelectedItem());
        dtChamado.setPrioridade((String) jComboPrioridade.getSelectedItem());
        dao.CriarChamado(dtChamado,dtUser);
-      
+      UsuarioDashboard UserDs = new UsuarioDashboard();
+      UserDs.ListarChamados();
        
     }//GEN-LAST:event_ButtonEnviarChamadoActionPerformed
 
