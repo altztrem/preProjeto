@@ -33,30 +33,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    public class PainelGradiente extends JPanel {
     
-     @Override
-    protected void paintComponent(Graphics g) {
-        // 1. Chama o método original para limpar a tela antes de desenhar
-        super.paintComponent(g);
-        
-        // 2. Transforma o pincel em 2D
-        Graphics2D g2d = (Graphics2D) g;
-        
-        // 3. Define as cores
-        Color azulClaro = new Color(0,120,231);
-        Color azulEscuro = new Color(0,51,102);
-        
-        
-        // 4. Cria a mistura usando a altura dinâmica do painel (getHeight())
-        GradientPaint degrade = new GradientPaint(0, 0, azulClaro, 0, getHeight(), azulEscuro);
-        
-        // 5. Aplica a mistura no pincel e pinta o retângulo inteiro
-        g2d.setPaint(degrade);
-        g2d.fillRect(0, 0, getWidth(), getHeight());
-    }
     
-    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -67,8 +46,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel5 =  new PainelGradiente()
-        ;
+        jPanel5 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -866,6 +844,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             inf.setPerfil("Usuario");
             inf.setTelefone(txtTelefone.getText().replaceAll("[^0-9]", "")); 
             inf.setSetor((String) jComboSetor.getSelectedItem());
+            
                 
             UsuarioDao dao = new UsuarioDao();
             dao.CriarCadastro(inf);

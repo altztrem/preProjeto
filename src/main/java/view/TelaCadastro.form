@@ -119,9 +119,6 @@
               <Dimension value="[280, 280]"/>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value=" new PainelGradiente()&#xa;"/>
-          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">

@@ -96,7 +96,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(693, 523));
         getContentPane().setLayout(null);
 
         jPanelFundoBranco.setBackground(new java.awt.Color(243, 247, 251));
@@ -412,6 +411,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelFundoBrancoLayout.setHorizontalGroup(
             jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFundoBrancoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelFundoCinza, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -421,15 +421,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFundoBrancoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelFundoCinza, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanelFundoBrancoLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 146, Short.MAX_VALUE))
+                .addGroup(jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelFundoCinza, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelFundoBranco);
-        jPanelFundoBranco.setBounds(0, 0, 944, 672);
+        jPanelFundoBranco.setBounds(0, 0, 950, 672);
         jPanelFundoBranco.getAccessibleContext().setAccessibleDescription("");
 
         pack();
@@ -457,16 +456,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
             String senhaTexto = new String(senha);
             UsuarioDao dao  = new UsuarioDao();
             
-    if(dao.checkLogin(txtLogin.getText(),senhaTexto,txtLogin.getText() )){
-        
-        setVisible(false);
-        UsuarioDashboard Dashboard = new UsuarioDashboard();
-        Dashboard.setVisible(true);
-        
-    }else{
-        JOptionPane.showMessageDialog(null, "Senha ou Usuario incorreto !");
-    }
-    
+            
+String perfil = dao.checkLogin(txtLogin.getText(), senhaTexto, txtLogin.getText());
+
+if (perfil == null) {
+    JOptionPane.showMessageDialog(this, "Login ou senha inválidos");
+} else if (perfil.equals("Usuario")) {
+    UsuarioDashboard dashboard = new UsuarioDashboard
+        ();
+    dashboard.setVisible(true);
+    this.dispose();
+} else if (perfil.equals("Tecnico") || perfil.equalsIgnoreCase("Administrador")) {
+    new TecnicoDashboard().setVisible(true);
+    this.dispose();
+} else {
+    JOptionPane.showMessageDialog(this, "Perfil não reconhecido: " + perfil);
+}
+
     }//GEN-LAST:event_buttonEntrarActionPerformed
 
     private void verifLogin(){

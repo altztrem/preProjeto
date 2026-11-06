@@ -662,15 +662,15 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(51, 51, 51)
                 .addComponent(jLabel19)
-                .addGap(120, 120, 120)
+                .addGap(179, 179, 179)
                 .addComponent(jLabel20)
-                .addGap(149, 149, 149)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                .addGap(175, 175, 175)
                 .addComponent(jLabel22)
-                .addGap(185, 185, 185)
+                .addGap(176, 176, 176)
                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
         );
@@ -693,7 +693,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jLabel6.setText("Meus chamados recentes");
 
         jTable.setBackground(new java.awt.Color(231, 244, 252));
-        jTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTable.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTable.setForeground(new java.awt.Color(23, 43, 67));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -761,8 +761,8 @@ public class UsuarioDashboard extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

@@ -48,42 +48,35 @@ public class UsuarioDao {
         }
     }
               
-        public boolean checkLogin(String email, String senha, String nome) {
+        public String checkLogin(String email, String senha, String nome) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
 
-        boolean check = false;
-        
-        try {
+    String perfil = null;
 
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE (email = ? or nome = ?) and senhaHash = ?");
-            stmt.setString(1, email);
-            stmt.setString(2, nome);
-            stmt.setString(3, senha);
+    try {
+        stmt = con.prepareStatement("SELECT * FROM usuario WHERE (email = ? or nome = ?) and senhaHash = ?");
+        stmt.setString(1, email);
+        stmt.setString(2, nome);
+        stmt.setString(3, senha);
 
-            rs = stmt.executeQuery();
+        rs = stmt.executeQuery();
 
-            if (rs.next()) {
-                check = true;
-                dtUsuario.idUsuario = rs.getInt("idUsuario");
-           
-            JOptionPane.showMessageDialog(null, "id no login: " + dtUsuario.idUsuario);
-            }
-           
-                
-        } catch (SQLException ex) {
-          
-            Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            ConnectionFactory.closeConnection(con, stmt, rs);
+        if (rs.next()) {
+            perfil = rs.getString("perfil");
+            dtUsuario.idUsuario = rs.getInt("idUsuario");
         }
 
-        return check;
+    } catch (SQLException ex) {
+        Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
 
-    }    
-          
+    return perfil;
+}          
     
     }
     
