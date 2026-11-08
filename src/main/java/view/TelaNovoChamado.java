@@ -411,6 +411,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTitulo.setForeground(new java.awt.Color(23, 43, 67));
+        jTitulo.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_titulo_20.svg", 20, 20));
         jTitulo.setText("Titulo *");
 
         txtTitulo.setBackground(new java.awt.Color(255, 255, 255));
@@ -444,6 +445,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel9.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_categoria_20.svg", 20, 20));
         jLabel9.setText("Categoria *");
 
         jComboPrioridade.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -455,6 +457,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel10.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_prioridade_20.svg", 20, 20));
         jLabel10.setText("Prioridade *");
 
         jComboCategoria.setBackground(new java.awt.Color(255, 255, 255));
@@ -473,6 +476,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel11.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_descricao_20.svg", 20, 20));
         jLabel11.setText("Descrição do problema *");
 
         ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -539,6 +543,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel15.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_solicitante_20.svg", 20, 20));
         jLabel15.setText("Solicitante");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
