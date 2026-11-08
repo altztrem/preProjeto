@@ -328,11 +328,11 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         );
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel7.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("HelpDesk");
+        jLabel8.setText("SyncDesk");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));

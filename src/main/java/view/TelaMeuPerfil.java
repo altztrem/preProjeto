@@ -527,11 +527,11 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel60.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png"))); // NOI18N
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel61.setText("HelpDesk");
+        jLabel61.setText("SyncDesk");
 
         jLabel62.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(255, 255, 255));
@@ -891,11 +891,11 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel75.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png"))); // NOI18N
 
         jLabel76.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel76.setText("HelpDesk");
+        jLabel76.setText("SyncDesk");
 
         jLabel77.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(255, 255, 255));

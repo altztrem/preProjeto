@@ -321,7 +321,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 27)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("HelpDesk");
+        jLabel2.setText("SyncDesk");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -342,7 +342,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11.setText("acompanhar seus chamados de suporte.");
 
         jLabel15.setBackground(new java.awt.Color(0, 120, 231));
-        jLabel15.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
         jLabel16.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/seguranca_64px_branco.svg", 64, 64));
 

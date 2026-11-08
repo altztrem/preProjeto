@@ -129,7 +129,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 27)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("HelpDesk");
+        jLabel33.setText("SyncDesk");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,7 +150,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel36.setText("gerenciar e acompanhar seus chamados");
 
         jLabel37.setBackground(new java.awt.Color(0, 120, 231));
-        jLabel37.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png"))); // NOI18N
 
         jLabel38.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/chamado_32px_branco.svg", 32, 32)); // NOI18N
 

@@ -81,7 +81,7 @@ public class TelaDetalhesChamado extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
 
-        jLabel10.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
         jLabel14.setText("jLabel14");
 
@@ -126,7 +126,7 @@ public class TelaDetalhesChamado extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(23, 43, 67));
         jLabel8.setText("Data");
 
-        jLabel11.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
         jLabelTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(23, 43, 67));
