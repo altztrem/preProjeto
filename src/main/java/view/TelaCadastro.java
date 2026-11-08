@@ -43,7 +43,9 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jPanel14 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField5 = new javax.swing.JTextField();
+        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -54,7 +56,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel38 = new javax.swing.JLabel();
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel45 = new javax.swing.JLabel();
         jPanelFundoCinza3 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
@@ -63,7 +67,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabelSenha2 = new javax.swing.JLabel();
         buttonCadastrar = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel41 = new javax.swing.JLabel();
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AvisoNome = new javax.swing.JLabel();
         AvisoSenha = new javax.swing.JLabel();
         jtxtSenha = new javax.swing.JPasswordField();
@@ -144,9 +150,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel36.setText("gerenciar e acompanhar seus chamados");
 
         jLabel37.setBackground(new java.awt.Color(0, 120, 231));
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/helpdesk_icone_64.png"))); // NOI18N
+        jLabel37.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
 
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconesBrancos/chamado_32px_branco.png"))); // NOI18N
+        jLabel38.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/chamado_32px_branco.svg", 32, 32)); // NOI18N
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
@@ -217,7 +223,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jPanelFundoCinza3.setPreferredSize(new java.awt.Dimension(674, 680));
         jPanelFundoCinza3.setRequestFocusEnabled(false);
 
-        jLabel39.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(23, 43, 67));
         jLabel39.setText("Cadastro");
 
@@ -273,11 +279,11 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel41.setBackground(new java.awt.Color(153, 153, 153));
 
-        AvisoNome.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoNome.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoNome.setForeground(new java.awt.Color(255, 0, 51));
         AvisoNome.setText("*");
 
-        AvisoSenha.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoSenha.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoSenha.setForeground(new java.awt.Color(255, 0, 51));
         AvisoSenha.setText("*");
 
@@ -310,9 +316,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
 
         jButtonOlho.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonOlho.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButtonOlho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonOlho.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonOlho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconesAzul/olho_20px.png"))); // NOI18N
+        jButtonOlho.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20)); // NOI18N
         jButtonOlho.setBorder(null);
         jButtonOlho.setBorderPainted(false);
         jButtonOlho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -385,7 +391,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabelSenha3.setForeground(new java.awt.Color(23, 43, 67));
         jLabelSenha3.setText("Confirmação de senha");
 
-        AvisoSenhaConf.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoSenhaConf.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoSenhaConf.setForeground(new java.awt.Color(255, 0, 51));
         AvisoSenhaConf.setText("*");
 
@@ -408,9 +414,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
 
         jButtonOlho3.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonOlho3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButtonOlho3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonOlho3.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonOlho3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconesAzul/olho_20px.png"))); // NOI18N
+        jButtonOlho3.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20)); // NOI18N
         jButtonOlho3.setBorder(null);
         jButtonOlho3.setBorderPainted(false);
         jButtonOlho3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -425,11 +431,11 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        AvisoEmail.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoEmail.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoEmail.setForeground(new java.awt.Color(255, 0, 51));
         AvisoEmail.setText("*");
 
-        AvisoTelefone.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoTelefone.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoTelefone.setForeground(new java.awt.Color(255, 0, 51));
         AvisoTelefone.setText("*");
 
@@ -466,7 +472,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        AvisoSetor.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        AvisoSetor.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         AvisoSetor.setForeground(new java.awt.Color(255, 0, 51));
         AvisoSetor.setText("*");
 

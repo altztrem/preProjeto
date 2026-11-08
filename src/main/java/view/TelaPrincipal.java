@@ -19,8 +19,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     
     
-    private ImageIcon olhoAberto;
-    private ImageIcon olhoFechado;
+    private javax.swing.Icon olhoAberto;
+    private javax.swing.Icon olhoFechado;
     private boolean olhoVisivel;
    DataUsuario dtUser =  new DataUsuario();
     
@@ -35,9 +35,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        setSize(668, 523);
+        setResizable(false);
         setLocationRelativeTo(null);
-        olhoAberto = new ImageIcon(getClass().getResource("/IconesAzul/olho_20px.png"));
-        olhoFechado = new ImageIcon(getClass().getResource("/IconesAzul/olho_fechado.png"));
+        olhoAberto = new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20);
+        olhoFechado = new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_fechado.svg", 24, 24);
         
 
         
@@ -53,7 +55,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel6 = new javax.swing.JLabel();
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
         jPanelFundoBranco = new javax.swing.JPanel();
@@ -64,15 +68,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelSenha = new javax.swing.JLabel();
         buttonEntrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel7 = new javax.swing.JLabel();
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel4 = new javax.swing.JLabel();
         jLabelRegistrese = new javax.swing.JLabel();
         jAviso1 = new javax.swing.JLabel();
         jAviso2 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12 = new javax.swing.JLabel();
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonOlho = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -82,7 +89,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16 = new javax.swing.JLabel();
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,7 +113,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelFundoCinza.setPreferredSize(new java.awt.Dimension(674, 680));
         jPanelFundoCinza.setRequestFocusEnabled(false);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(23, 43, 67));
         jLabel1.setText("Bem vindo !");
 
@@ -175,11 +184,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jAviso1.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jAviso1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jAviso1.setForeground(new java.awt.Color(255, 0, 51));
         jAviso1.setText("*");
 
-        jAviso2.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jAviso2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jAviso2.setForeground(new java.awt.Color(255, 0, 51));
         jAviso2.setText("*");
 
@@ -198,24 +207,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(23, 43, 67));
-        jCheckBox1.setText("Lembrar de mim");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
+        jLabel13.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/usuario_20px.svg", 20, 20));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconesAzul/usuario_20px.png"))); // NOI18N
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconesAzul/senha_20px.png"))); // NOI18N
+        jLabel12.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/senha_20px.svg", 20, 20));
 
         jButtonOlho.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonOlho.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButtonOlho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonOlho.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonOlho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconesAzul/olho_20px.png"))); // NOI18N
+        jButtonOlho.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20));
         jButtonOlho.setBorder(null);
         jButtonOlho.setBorderPainted(false);
         jButtonOlho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -263,20 +262,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelFundoCinzaLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanelFundoCinzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelFundoCinzaLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelRegistrese))
-                            .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(346, 346, 346)
                         .addGroup(jPanelFundoCinzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel7))))
-                .addContainerGap(265, Short.MAX_VALUE))
+                            .addComponent(jLabel7)))
+                    .addGroup(jPanelFundoCinzaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelFundoCinzaLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelRegistrese)))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanelFundoCinzaLayout.setVerticalGroup(
             jPanelFundoCinzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,15 +303,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(142, 142, 142)
                         .addComponent(jLabel5))
                     .addGroup(jPanelFundoCinzaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(buttonEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelFundoCinzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jLabelRegistrese))))
-                .addGap(434, 434, 434)
+                .addGap(440, 440, 440)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -346,9 +342,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11.setText("acompanhar seus chamados de suporte.");
 
         jLabel15.setBackground(new java.awt.Color(0, 120, 231));
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/helpdesk_icone_64.png"))); // NOI18N
+        jLabel15.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconesBrancos/seguranca_64px_branco.png"))); // NOI18N
+        jLabel16.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/seguranca_64px_branco.svg", 64, 64));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -376,7 +372,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(102, 102, 102)
@@ -403,7 +399,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelFundoBrancoLayout = new javax.swing.GroupLayout(jPanelFundoBranco);
@@ -411,8 +407,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelFundoBrancoLayout.setHorizontalGroup(
             jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFundoBrancoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelFundoCinza, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -420,11 +415,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelFundoBrancoLayout.setVerticalGroup(
             jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFundoBrancoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addGroup(jPanelFundoBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelFundoCinza, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelFundoBranco);
@@ -433,10 +428,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
@@ -559,7 +550,6 @@ if (perfil == null) {
     private javax.swing.JLabel jAviso1;
     private javax.swing.JLabel jAviso2;
     private javax.swing.JButton jButtonOlho;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

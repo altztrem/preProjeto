@@ -121,7 +121,116 @@ public class ChamadoDao {
         return d;
 
     }      
-          
+     
+        public int qtdAberto(int idUsuario) {
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    DataChamado d = new DataChamado();
+    int qtdAberto = 0;
+
+    try {
+        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdAberto FROM chamado  WHERE statusChamado = ? and  idUsuario = ? ");
+        stmt.setString(1, "Aberto");
+        stmt.setInt(2, idUsuario);
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            qtdAberto = rs.getInt("qtdAberto");
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+
+    return qtdAberto;
+}
+        
+        
+   public int qtdAndamento(int idUsuario) {
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    DataChamado d = new DataChamado();
+    int qtdAndamento = 0;
+
+    try {
+        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdAndamento FROM chamado  WHERE statusChamado = ? and  idUsuario = ? ");
+        stmt.setString(1, "Andamento");
+        stmt.setInt(2, idUsuario);
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            qtdAndamento = rs.getInt("qtdAndamento");
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+
+    return qtdAndamento;
+}
+   
+    public int qtdConcluido(int idUsuario) {
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    DataChamado d = new DataChamado();
+    int qtdConcluido = 0;
+
+    try {
+        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdConcluido FROM chamado  WHERE statusChamado = ? and  idUsuario = ? ");
+        stmt.setString(1, "Concluido");
+        stmt.setInt(2, idUsuario);
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            qtdConcluido = rs.getInt("qtdConcluido");
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+
+    return qtdConcluido;
+}
+    
+     public int qtdTotal(int idUsuario) {
+
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    DataChamado d = new DataChamado();
+    int qtdTotal = 0;
+
+    try {
+        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdTotal FROM chamado WHERE idUsuario = ? ");
+        stmt.setInt(1, idUsuario);
+        rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            qtdTotal = rs.getInt("qtdTotal");
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+
+    return qtdTotal;
+}
+
+     
     
     }
 

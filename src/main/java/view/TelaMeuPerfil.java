@@ -41,10 +41,14 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jComboBox16 = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextArea8 = new javax.swing.JTextArea();
+        jTextArea8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel55 = new javax.swing.JLabel();
         ButtonCancelar7 = new javax.swing.JButton();
+        ButtonCancelar7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonEnviarChamado7 = new javax.swing.JButton();
+        ButtonEnviarChamado7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonLimpar7 = new javax.swing.JButton();
+        ButtonLimpar7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         txtNome15 = new javax.swing.JTextField();
@@ -61,6 +65,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jPanelSair = new javax.swing.JPanel();
         jLabelSair = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
+        jLabel60.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
@@ -69,6 +74,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel66 = new javax.swing.JLabel();
         nomeUsuario = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -84,6 +90,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jPanelSair1 = new javax.swing.JPanel();
         jLabelSair1 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
+        jLabel75.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
@@ -91,6 +98,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel80 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel82 = new javax.swing.JLabel();
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel83 = new javax.swing.JLabel();
         nomeUsuario1 = new javax.swing.JLabel();
 
@@ -311,7 +319,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel59.setBackground(new java.awt.Color(255, 255, 255));
         jLabel59.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/ic_home_24px.png"))); // NOI18N
+        jLabel59.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/ic_home_24px.svg", 24, 24)); // NOI18N
         jLabel59.setText("Inicio");
         jLabel59.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel59.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -365,7 +373,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabelChamado.setBackground(new java.awt.Color(33, 134, 230));
         jLabelChamado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelChamado.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelChamado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/abrir_chamado.png"))); // NOI18N
+        jLabelChamado.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/abrir_chamado.svg", 24, 24)); // NOI18N
         jLabelChamado.setText("Abrir Chamado");
         jLabelChamado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelChamado.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -415,7 +423,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabelMeusChamados.setBackground(new java.awt.Color(0, 120, 231));
         jLabelMeusChamados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelMeusChamados.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMeusChamados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/meus_chamados.png"))); // NOI18N
+        jLabelMeusChamados.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/meus_chamados.svg", 24, 24)); // NOI18N
         jLabelMeusChamados.setText("Meus Chamados     ");
         jLabelMeusChamados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMeusChamados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -454,7 +462,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabelPerfil.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/perfil.png"))); // NOI18N
+        jLabelPerfil.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil.svg", 24, 24)); // NOI18N
         jLabelPerfil.setText("Perfil");
         jLabelPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -488,7 +496,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabelSair.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelSair.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/sair.png"))); // NOI18N
+        jLabelSair.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/sair.svg", 24, 24)); // NOI18N
         jLabelSair.setText("Sair");
         jLabelSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelSair.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -519,7 +527,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/helpdesk_icone_64.png"))); // NOI18N
+        jLabel60.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
@@ -531,7 +539,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabel63.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icone-info-48px.png"))); // NOI18N
+        jLabel63.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icone-info-48px.svg", 48, 48)); // NOI18N
         jLabel63.setText("Precisa de ajuda?");
         jLabel63.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -609,16 +617,16 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(0, 120, 231));
 
-        jLabel65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icons8_menu_48px_1.png"))); // NOI18N
+        jLabel65.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icons8_menu_48px_1.svg", 48, 48)); // NOI18N
         jLabel65.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel66.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel66.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(33, 134, 230));
         jLabel66.setText("l");
 
         nomeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nomeUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        nomeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/male_user_50px.png"))); // NOI18N
+        nomeUsuario.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/male_user_50px.svg", 50, 50)); // NOI18N
         nomeUsuario.setText(" Olá, Admin");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -672,7 +680,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel74.setBackground(new java.awt.Color(255, 255, 255));
         jLabel74.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/ic_home_24px.png"))); // NOI18N
+        jLabel74.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/ic_home_24px.svg", 24, 24)); // NOI18N
         jLabel74.setText("Inicio");
         jLabel74.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel74.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -726,7 +734,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabelChamado1.setBackground(new java.awt.Color(33, 134, 230));
         jLabelChamado1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelChamado1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelChamado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/abrir_chamado.png"))); // NOI18N
+        jLabelChamado1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/abrir_chamado.svg", 24, 24)); // NOI18N
         jLabelChamado1.setText("Abrir Chamado");
         jLabelChamado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelChamado1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -779,7 +787,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabelMeusChamados1.setBackground(new java.awt.Color(0, 120, 231));
         jLabelMeusChamados1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelMeusChamados1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMeusChamados1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/meus_chamados.png"))); // NOI18N
+        jLabelMeusChamados1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/meus_chamados.svg", 24, 24)); // NOI18N
         jLabelMeusChamados1.setText("Meus Chamados     ");
         jLabelMeusChamados1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMeusChamados1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -818,7 +826,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabelPerfil1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelPerfil1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPerfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/perfil.png"))); // NOI18N
+        jLabelPerfil1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil.svg", 24, 24)); // NOI18N
         jLabelPerfil1.setText("Perfil");
         jLabelPerfil1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -852,7 +860,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabelSair1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelSair1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSair1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/sair.png"))); // NOI18N
+        jLabelSair1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/sair.svg", 24, 24)); // NOI18N
         jLabelSair1.setText("Sair");
         jLabelSair1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelSair1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -883,7 +891,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/helpdesk_icone_64.png"))); // NOI18N
+        jLabel75.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64)); // NOI18N
 
         jLabel76.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
@@ -895,7 +903,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabel78.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icone-info-48px.png"))); // NOI18N
+        jLabel78.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icone-info-48px.svg", 48, 48)); // NOI18N
         jLabel78.setText("Precisa de ajuda?");
         jLabel78.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -968,16 +976,16 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(0, 120, 231));
 
-        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icons8_menu_48px_1.png"))); // NOI18N
+        jLabel82.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icons8_menu_48px_1.svg", 48, 48)); // NOI18N
         jLabel82.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel83.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(33, 134, 230));
         jLabel83.setText("l");
 
         nomeUsuario1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         nomeUsuario1.setForeground(new java.awt.Color(255, 255, 255));
-        nomeUsuario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/male_user_50px.png"))); // NOI18N
+        nomeUsuario1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/male_user_50px.svg", 50, 50)); // NOI18N
         nomeUsuario1.setText(" Olá, Admin");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);

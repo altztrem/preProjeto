@@ -77,6 +77,17 @@ public class UsuarioDao {
 
     return perfil;
 }          
+           
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
     }
     

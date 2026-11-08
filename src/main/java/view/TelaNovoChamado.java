@@ -23,9 +23,13 @@ public class TelaNovoChamado extends javax.swing.JFrame {
      
        
     public TelaNovoChamado() {
-        setLocationRelativeTo(null);
+        
         initComponents();
-        setSize(1501, 744);
+        
+        
+        setResizable(false);
+        setLocationRelativeTo(null);
+        
          DataUsuario dtUser =  new DataUsuario();
         NomeUsuario.setText( "Olá, "+ dtUser.getSessaoUsuario());
         txtNome1.setText(dtUser.getSessaoUsuario());
@@ -110,7 +114,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/ic_home_24px.png"))); // NOI18N
+        jLabel4.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/ic_home_24px.svg", 24, 24));
         jLabel4.setText("Inicio");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -164,7 +168,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabelChamado.setBackground(new java.awt.Color(33, 134, 230));
         jLabelChamado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelChamado.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelChamado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/abrir_chamado.png"))); // NOI18N
+        jLabelChamado.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/abrir_chamado.svg", 24, 24));
         jLabelChamado.setText("Abrir Chamado");
         jLabelChamado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelChamado.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -214,7 +218,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabelMeusChamados.setBackground(new java.awt.Color(0, 120, 231));
         jLabelMeusChamados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelMeusChamados.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelMeusChamados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/meus_chamados.png"))); // NOI18N
+        jLabelMeusChamados.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/meus_chamados.svg", 24, 24));
         jLabelMeusChamados.setText("Meus Chamados     ");
         jLabelMeusChamados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMeusChamados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -230,7 +234,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
             .addGroup(jPanelMeuChamadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelMeusChamados)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanelMeuChamadoLayout.setVerticalGroup(
             jPanelMeuChamadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,7 +257,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabelPerfil.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/perfil.png"))); // NOI18N
+        jLabelPerfil.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil.svg", 24, 24));
         jLabelPerfil.setText("Perfil");
         jLabelPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -267,7 +271,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addComponent(jLabelPerfil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -292,7 +296,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabelSair.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelSair.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/sair.png"))); // NOI18N
+        jLabelSair.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/sair.svg", 24, 24));
         jLabelSair.setText("Sair");
         jLabelSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelSair.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -323,7 +327,8 @@ public class TelaNovoChamado extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/helpdesk_icone_64.png"))); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel7.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/helpdesk_icone_64.svg", 64, 64));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -335,7 +340,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icone-info-48px.png"))); // NOI18N
+        jLabel24.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icone-info-48px.svg", 48, 48));
         jLabel24.setText("Precisa de ajuda?");
         jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -441,6 +446,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(23, 43, 67));
         jLabel9.setText("Categoria *");
 
+        jComboPrioridade.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboPrioridade.setBackground(new java.awt.Color(255, 255, 255));
         jComboPrioridade.setForeground(new java.awt.Color(0, 0, 0));
         jComboPrioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a prioridade", "Baixa", "Media", "Alta", "Urgente" }));
@@ -452,6 +458,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel10.setText("Prioridade *");
 
         jComboCategoria.setBackground(new java.awt.Color(255, 255, 255));
+        jComboCategoria.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboCategoria.setForeground(new java.awt.Color(0, 0, 0));
         jComboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma categoria", "Periferico", "Software", "Rede / Internet", "E-mail", "Outro" }));
         jComboCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
@@ -459,6 +466,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         txtDescricao.setBackground(new java.awt.Color(255, 255, 255));
         txtDescricao.setColumns(20);
+        txtDescricao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtDescricao.setRows(5);
         txtDescricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
         jScrollPane1.setViewportView(txtDescricao);
@@ -467,9 +475,11 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(23, 43, 67));
         jLabel11.setText("Descrição do problema *");
 
+        ButtonCancelar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonCancelar.setForeground(new java.awt.Color(56, 84, 119));
         ButtonCancelar.setText("Cancelar");
 
+        ButtonEnviarChamado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonEnviarChamado.setBackground(new java.awt.Color(0, 120, 231));
         ButtonEnviarChamado.setForeground(new java.awt.Color(255, 255, 255));
         ButtonEnviarChamado.setText("Enviar Chamado");
@@ -479,6 +489,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
             }
         });
 
+        ButtonLimpar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonLimpar.setForeground(new java.awt.Color(56, 84, 119));
         ButtonLimpar.setText("Limpar campos");
         ButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -618,16 +629,17 @@ public class TelaNovoChamado extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 120, 231));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/icons8_menu_48px_1.png"))); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/icons8_menu_48px_1.svg", 48, 48));
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(33, 134, 230));
         jLabel6.setText("l");
 
         NomeUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NomeUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        NomeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons/male_user_50px.png"))); // NOI18N
+        NomeUsuario.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/male_user_50px.svg", 50, 50));
         NomeUsuario.setText(" Olá, Admin");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -639,20 +651,18 @@ public class TelaNovoChamado extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1097, Short.MAX_VALUE)
                 .addComponent(NomeUsuario)
-                .addGap(163, 163, 163))
+                .addGap(316, 316, 316))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel5))
-            .addComponent(jLabel6)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NomeUsuario)
-                .addContainerGap())
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel6)
+                .addComponent(NomeUsuario))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -678,7 +688,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
                     .addComponent(BarraLateral2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -688,11 +698,11 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1501, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1351, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
         );
 
         pack();

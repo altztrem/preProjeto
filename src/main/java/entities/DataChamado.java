@@ -21,6 +21,7 @@ public class DataChamado {
     private String prioridade;
     private String dataAbertura;
     private String dataFechadura;
+    
     public DataChamado() {
     }
 
