@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -136,7 +136,7 @@
                           <Component id="jButton4" min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="568" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="578" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -527,7 +527,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="9">
-                        <StringItem index="0" value="null"/>
+                        <StringItem index="0" value="Selecione"/>
                         <StringItem index="1" value="Administra&#xe7;&#xe3;o"/>
                         <StringItem index="2" value="Inform&#xe1;tica"/>
                         <StringItem index="3" value="Recursos Humanos"/>

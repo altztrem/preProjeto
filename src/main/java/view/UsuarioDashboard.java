@@ -334,16 +334,16 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(14, 14, 14)
                 .addComponent(jLabelPerfil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPerfilLayout.setVerticalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPerfilLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelPerfil)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanelSair.setBackground(new java.awt.Color(0, 120, 231));
@@ -430,7 +430,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
                                 .addGroup(BarraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel18))
-                                .addGap(0, 13, Short.MAX_VALUE))))
+                                .addGap(0, 77, Short.MAX_VALUE))))
                     .addGroup(BarraLateralLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel25)))
@@ -884,11 +884,11 @@ public class UsuarioDashboard extends javax.swing.JFrame {
                                             .addComponent(jLabel5)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(45, 45, 45)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(45, 45, 45)
                                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(46, 46, 46)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(962, 962, 962)
@@ -1081,10 +1081,10 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelSairMouseClicked
 
     private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
-          TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
-        setVisible(false);
+        TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
         telaMeuPerfil.setVisible(true);
-        this.dispose();
+        
+        
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked

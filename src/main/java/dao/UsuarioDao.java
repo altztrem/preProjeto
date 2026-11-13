@@ -205,7 +205,50 @@ public class UsuarioDao {
 
     return qtdTecnico;
 }
-        
+       public DataUsuario BuscarUsuario(int idUsuario) {
+              
+
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DataUsuario u = null;
+
+   
+       
+        try {
+
+            stmt = con.prepareStatement("SELECT  idUsuario,nome,email,SenhaHash,setor,telefone,perfil FROM usuario WHERE IdUsuario = ?");
+            stmt.setInt(1, idUsuario);
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+             u = new DataUsuario();
+             u.setIdUsuario(rs.getInt("idUsuario"));
+             u.setNome(rs.getString("nome"));
+             u.setEmail(rs.getString("email"));
+             u.setSenha(rs.getString("SenhaHash"));
+             u.setSetor(rs.getString("setor"));
+             u.setTelefone(rs.getString("telefone"));
+             u.setPerfil(rs.getString("perfil"));
+             
+             
+            System.out.println(""+u.getNome());
+            
+            }
+           
+                
+        } catch (SQLException ex) {
+          
+            Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Erro ao puxar dados");
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return u;
+
+    }         
         
         
         

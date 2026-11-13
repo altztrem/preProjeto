@@ -6,12 +6,11 @@ import java.time.LocalDateTime;
 
 public class DataChamado {
     
-    //chave estrangeira INICIO
-    public static int idUsuario;
+   
     //chave estrangeira FIM
 
     
-    
+    private DataUsuario usuario;
     
     private int idChamado;
     private String titulo;
@@ -27,13 +26,21 @@ public class DataChamado {
 
     public DataChamado(Long idCategoria, int idUsuario, int idChamado, String titulo, String descricao, String status, String prioridade, String dataAbertura, String categoria) {
         this.categoria = categoria;
-        this.idUsuario = idUsuario;
         this.idChamado = idChamado;
         this.titulo = titulo;
         this.descricao = descricao;
         this.statusChamado = status;
         this.prioridade = prioridade;
         this.dataAbertura = dataAbertura;
+    }
+    
+     public DataUsuario getUsuario() {
+        return usuario;
+    }
+
+    //chave estrangeira INICIO
+    public void setUsuario(DataUsuario usuario) {
+        this.usuario = usuario;
     }
     
     
@@ -51,14 +58,6 @@ public class DataChamado {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
-
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
     }
 
     public int getIdChamado() {

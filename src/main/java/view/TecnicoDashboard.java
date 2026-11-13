@@ -4,15 +4,18 @@
  */
 package view;
 
+import dao.ChamadoDao;
+import entities.DataChamado;
 import java.awt.Cursor;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author gablinux
  */
 public class TecnicoDashboard extends javax.swing.JFrame {
-    
+    private TelaDetalhesChamado janelaDetalhesAtual = null;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TecnicoDashboard.class.getName());
 
     /**
@@ -20,6 +23,8 @@ public class TecnicoDashboard extends javax.swing.JFrame {
      */
     public TecnicoDashboard() {
         initComponents();
+        ListarChamados();
+        DataChamado dtChamado = new DataChamado();
     }
 
     /**
@@ -310,7 +315,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addComponent(jLabelPerfil1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -718,7 +723,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -736,6 +741,14 @@ public class TecnicoDashboard extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable);
+        if (jTable.getColumnModel().getColumnCount() > 0) {
+            jTable.getColumnModel().getColumn(0).setResizable(false);
+            jTable.getColumnModel().getColumn(1).setResizable(false);
+            jTable.getColumnModel().getColumn(2).setResizable(false);
+            jTable.getColumnModel().getColumn(3).setResizable(false);
+            jTable.getColumnModel().getColumn(4).setResizable(false);
+            jTable.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -860,20 +873,25 @@ public class TecnicoDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10FocusGained
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        int linha = jTable.rowAtPoint(evt.getPoint());
-        int coluna = jTable.columnAtPoint(evt.getPoint());
+                       
+    int linha = jTable.rowAtPoint(evt.getPoint());
+    int coluna = jTable.columnAtPoint(evt.getPoint());
 
-        if (linha >= 0 && coluna == 4) {
-            jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            int idChamado = (int) jTable.getValueAt(linha,0);
-            TelaDetalhesChamado detalhes = new TelaDetalhesChamado(idChamado);
-            detalhes.setLocationRelativeTo(this);
-            detalhes.setVisible(true);
+    if (linha >= 0 && coluna == 5) {
+         jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int idChamado = Integer.parseInt(jTable.getValueAt(linha, 0).toString());
 
-        }else{
-            jTable.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
+     
+        if (janelaDetalhesAtual != null) {
+            janelaDetalhesAtual.dispose();
         }
+
+     
+        janelaDetalhesAtual = new TelaDetalhesChamado(idChamado);
+        janelaDetalhesAtual.setLocationRelativeTo(this);
+        janelaDetalhesAtual.setVisible(true);
+    }
+
 
     }//GEN-LAST:event_jTableMouseClicked
 
@@ -881,8 +899,8 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         int linha = jTable.rowAtPoint(evt.getPoint());
         int coluna = jTable.columnAtPoint(evt.getPoint());
 
-        if (linha >= 0 && coluna == 4) {
-
+        if (linha >= 0 && coluna == 5) {
+        jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }else{
 
         }
@@ -999,7 +1017,6 @@ public class TecnicoDashboard extends javax.swing.JFrame {
      TelaUsuarios telaUsuarios = new TelaUsuarios();
         setVisible(false);
         telaUsuarios.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jLabelUsuariosMouseClicked
 
     /**
@@ -1026,6 +1043,24 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TecnicoDashboard().setVisible(true));
     }
+    public void ListarChamados() {
+    DefaultTableModel modelo = (DefaultTableModel) jTable.getModel();
+    modelo.setRowCount(0);
+    
+    ChamadoDao dao = new ChamadoDao();
+    
+    for (DataChamado chamado : dao.ListaTotalChamados()) {
+        modelo.addRow(new Object[]{
+            chamado.getIdChamado(),
+            chamado.getUsuario().getNome(),
+            chamado.getTitulo(),
+            chamado.getStatusChamado(),
+            chamado.getPrioridade(),
+            "Ver detalhes"
+        });
+    }
+}
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraLateral1;

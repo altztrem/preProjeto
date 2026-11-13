@@ -231,6 +231,47 @@ public class ChamadoDao {
 }
 
      
+     public List<DataChamado> ListaTotalChamados() {
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    List<DataChamado> chamados = new ArrayList<>();
+    
+    try {
+        stmt = con.prepareStatement("SELECT c.idChamado, c.idUsuario, u.nome AS nomeUsuario, c.titulo, c.statusChamado, c.prioridade FROM chamado c INNER JOIN usuario u ON c.idUsuario = u.idUsuario;");
+        rs = stmt.executeQuery();
+        
+        while (rs.next()) {
+            DataChamado c = new DataChamado();
+            
+            c.setIdChamado(rs.getInt("idChamado"));
+            c.setTitulo(rs.getString("titulo"));
+            c.setStatusChamado(rs.getString("statusChamado"));
+            c.setPrioridade(rs.getString("prioridade"));
+            
+            // OPÇÃO A: Se DataChamado tiver um objeto DataUsuario dentro dela (Mais recomendado)
+            DataUsuario u = new DataUsuario();
+            u.setIdUsuario(rs.getInt("idUsuario"));
+            u.setNome(rs.getString("nomeUsuario"));
+            c.setUsuario(u);
+          
+            
+            
+            chamados.add(c);
+        }
+        
+    } catch (SQLException ex) {
+        System.getLogger(ChamadoDao.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        System.out.println("erro: " + ex.getMessage());
+    } finally {
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+    
+    return chamados;
+}
+          
+     
     
     }
 

@@ -4,6 +4,8 @@
  */
 package view;
 
+import dao.UsuarioDao;
+import entities.DataUsuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +22,17 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     public TelaMeuPerfil() {
         initComponents();
         setLocationRelativeTo(null);
+         UsuarioDao dao = new UsuarioDao();
+        DataUsuario d = new DataUsuario();
+        dao.BuscarUsuario(d.getIdUsuario());
+        d = dao.BuscarUsuario(d.getIdUsuario());       
+        detalheUsuario(d);
+        
+        
+     if(d != null){
+    detalheUsuario(d);
+
+}
     }
 
     /**
@@ -242,7 +255,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jComboSetor.setBackground(new java.awt.Color(255, 255, 255));
         jComboSetor.setForeground(new java.awt.Color(0, 0, 0));
-        jComboSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "null", "Administração", "Informática", "Recursos Humanos", "Comercial/Vendas", "Marketing", "Logística", "Operacional", " " }));
+        jComboSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Administração", "Informática", "Recursos Humanos", "Comercial/Vendas", "Marketing", "Logística", "Operacional", " " }));
         jComboSetor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
         jComboSetor.setEnabled(false);
 
@@ -421,7 +434,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addGap(59, 59, 59)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(568, 568, 568))
+                .addGap(578, 578, 578))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -464,32 +477,6 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void txtTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusGained
-               txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
-
-    }//GEN-LAST:event_txtTelefoneFocusGained
-
-    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
-                txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
-
-    }//GEN-LAST:event_txtTelefoneFocusLost
-
-    private void txtTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneMouseClicked
-
-    private void txtTelefoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneMouseExited
-
-    private void txtTelefoneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneMouseReleased
-
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
-
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
      txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
 
@@ -516,7 +503,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -537,6 +524,30 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneActionPerformed
+
+    private void txtTelefoneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneMouseReleased
+
+    private void txtTelefoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneMouseExited
+
+    private void txtTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefoneMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneMouseClicked
+
+    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
+        txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
+    }//GEN-LAST:event_txtTelefoneFocusLost
+
+    private void txtTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusGained
+        txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
+    }//GEN-LAST:event_txtTelefoneFocusGained
 
     /**
      * @param args the command line arguments
@@ -561,6 +572,18 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TelaMeuPerfil().setVisible(true));
+    }
+    
+     private void detalheUsuario(DataUsuario d){
+        
+        txtNome.setText(d.getNome());
+        txtEmail.setText(d.getEmail());
+        txtTelefone.setText(d.getTelefone());
+        jComboSetor.insertItemAt(String.valueOf(d.getSetor()), 0);
+        jLabel9.setText(d.getNome());
+        jLabel10.setText(d.getEmail());
+    
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

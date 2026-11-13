@@ -55,9 +55,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel8 = new javax.swing.JLabel();
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel6 = new javax.swing.JLabel();
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
         jPanelFundoBranco = new javax.swing.JPanel();
@@ -68,18 +66,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelSenha = new javax.swing.JLabel();
         buttonEntrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel7 = new javax.swing.JLabel();
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel4 = new javax.swing.JLabel();
         jLabelRegistrese = new javax.swing.JLabel();
         jAviso1 = new javax.swing.JLabel();
         jAviso2 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12 = new javax.swing.JLabel();
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonOlho = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -89,9 +83,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16 = new javax.swing.JLabel();
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,6 +163,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel7.setBackground(new java.awt.Color(153, 153, 153));
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
 
@@ -207,8 +206,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel13.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/usuario_20px.svg", 20, 20));
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/senha_20px.svg", 20, 20));
 
         jButtonOlho.setBackground(new java.awt.Color(255, 255, 255));
@@ -341,9 +342,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("acompanhar seus chamados de suporte.");
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel15.setBackground(new java.awt.Color(0, 120, 231));
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel16.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/seguranca_64px_branco.svg", 64, 64));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
