@@ -121,7 +121,7 @@ public class ChamadoDao {
         return d;
 
     }      
-     
+     //QUANTIDADE DO USUARIO
         public int qtdAberto(int idUsuario) {
 
     Connection con = ConnectionFactory.getConnection();
@@ -148,18 +148,21 @@ public class ChamadoDao {
 
     return qtdAberto;
 }
+  
         
         
-   public int qtdAndamento(int idUsuario) {
+        
+
+  
+      public int qtdAndamento(int idUsuario) {
 
     Connection con = ConnectionFactory.getConnection();
     PreparedStatement stmt = null;
     ResultSet rs = null;
-    DataChamado d = new DataChamado();
     int qtdAndamento = 0;
 
     try {
-        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdAndamento FROM chamado  WHERE statusChamado = ? and  idUsuario = ? ");
+        stmt = con.prepareStatement("SELECT COUNT(*) AS qtdAndamento FROM chamado  WHERE statusChamado = ? and idUsuario = ?");
         stmt.setString(1, "Andamento");
         stmt.setInt(2, idUsuario);
         rs = stmt.executeQuery();
@@ -177,12 +180,20 @@ public class ChamadoDao {
     return qtdAndamento;
 }
    
+   
+   
+   
+   
+   
+   
+   
+   //QUANTIDADE DO USUARIO
     public int qtdConcluido(int idUsuario) {
 
     Connection con = ConnectionFactory.getConnection();
     PreparedStatement stmt = null;
     ResultSet rs = null;
-    DataChamado d = new DataChamado();
+
     int qtdConcluido = 0;
 
     try {
@@ -204,6 +215,22 @@ public class ChamadoDao {
     return qtdConcluido;
 }
     
+    
+    
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    //QUANTIDADE DO USUARIO
      public int qtdTotal(int idUsuario) {
 
     Connection con = ConnectionFactory.getConnection();
@@ -229,47 +256,15 @@ public class ChamadoDao {
 
     return qtdTotal;
 }
+    
+     
+     
+     
+     
+     
 
      
-     public List<DataChamado> ListaTotalChamados() {
-    Connection con = ConnectionFactory.getConnection();
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    
-    List<DataChamado> chamados = new ArrayList<>();
-    
-    try {
-        stmt = con.prepareStatement("SELECT c.idChamado, c.idUsuario, u.nome AS nomeUsuario, c.titulo, c.statusChamado, c.prioridade FROM chamado c INNER JOIN usuario u ON c.idUsuario = u.idUsuario;");
-        rs = stmt.executeQuery();
-        
-        while (rs.next()) {
-            DataChamado c = new DataChamado();
-            
-            c.setIdChamado(rs.getInt("idChamado"));
-            c.setTitulo(rs.getString("titulo"));
-            c.setStatusChamado(rs.getString("statusChamado"));
-            c.setPrioridade(rs.getString("prioridade"));
-            
-            // OPÇÃO A: Se DataChamado tiver um objeto DataUsuario dentro dela (Mais recomendado)
-            DataUsuario u = new DataUsuario();
-            u.setIdUsuario(rs.getInt("idUsuario"));
-            u.setNome(rs.getString("nomeUsuario"));
-            c.setUsuario(u);
-          
-            
-            
-            chamados.add(c);
-        }
-        
-    } catch (SQLException ex) {
-        System.getLogger(ChamadoDao.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        System.out.println("erro: " + ex.getMessage());
-    } finally {
-        ConnectionFactory.closeConnection(con, stmt, rs);
-    }
-    
-    return chamados;
-}
+  
           
      
     

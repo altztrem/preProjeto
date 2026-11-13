@@ -5,6 +5,7 @@
 package view;
 
 import dao.ChamadoDao;
+import dao.TecnicoDao;
 import entities.DataChamado;
 import java.awt.Cursor;
 import javax.swing.JOptionPane;
@@ -25,6 +26,12 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         initComponents();
         ListarChamados();
         DataChamado dtChamado = new DataChamado();
+        TecnicoDao TecnicoDao = new TecnicoDao();
+        jLabel11.setText(String.valueOf(TecnicoDao.qtdTotalAberto()));
+        jLabel12.setText(String.valueOf(TecnicoDao.qtdTotalAberto()));
+        jLabel14.setText(String.valueOf(TecnicoDao.qtdTotalAndamento()));
+        jLabel16.setText(String.valueOf(TecnicoDao.qtdTotalConcluido()));
+        
     }
 
     /**
@@ -939,9 +946,8 @@ public class TecnicoDashboard extends javax.swing.JFrame {
 
     private void jLabelPerfil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfil1MouseClicked
         TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
-        setVisible(false);
         telaMeuPerfil.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabelPerfil1MouseClicked
 
     private void jPanelMeuChamadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMeuChamadoMousePressed
@@ -1047,7 +1053,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
     DefaultTableModel modelo = (DefaultTableModel) jTable.getModel();
     modelo.setRowCount(0);
     
-    ChamadoDao dao = new ChamadoDao();
+    TecnicoDao dao = new TecnicoDao();
     
     for (DataChamado chamado : dao.ListaTotalChamados()) {
         modelo.addRow(new Object[]{
@@ -1056,7 +1062,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
             chamado.getTitulo(),
             chamado.getStatusChamado(),
             chamado.getPrioridade(),
-            "Ver detalhes"
+            "Gerenciar Chamado"
         });
     }
 }

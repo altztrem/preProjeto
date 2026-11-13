@@ -616,7 +616,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jLabel23.setText("Setor");
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel28.setForeground(new java.awt.Color(51, 51, 255));
         jLabel28.setText("Ações");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -959,7 +959,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         Usuario.getEmail(),
         Usuario.getPerfil(),
         Usuario.getSetor(),
-        "Ver Detalhes"
+        "Gerenciar Usuario"
        
         
         
