@@ -1049,23 +1049,27 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TecnicoDashboard().setVisible(true));
     }
-    public void ListarChamados() {
+   public void ListarChamados() {
     DefaultTableModel modelo = (DefaultTableModel) jTable.getModel();
     modelo.setRowCount(0);
-    
+
     TecnicoDao dao = new TecnicoDao();
-    
+
     for (DataChamado chamado : dao.ListaTotalChamados()) {
-        modelo.addRow(new Object[]{
-            chamado.getIdChamado(),
-            chamado.getUsuario().getNome(),
-            chamado.getTitulo(),
-            chamado.getStatusChamado(),
-            chamado.getPrioridade(),
-            "Gerenciar Chamado"
-        });
-    }
-}
+
+        if (!chamado.getStatusChamado().equals("Concluido")) {
+
+            modelo.addRow(new Object[]{
+                chamado.getIdChamado(),
+                chamado.getUsuario().getNome(),
+                chamado.getTitulo(),
+                chamado.getStatusChamado(),
+                chamado.getPrioridade(),
+                "Gerenciar Chamado"
+            }); 
+        }     
+    }         
+}              
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
