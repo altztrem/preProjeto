@@ -30,13 +30,12 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     public UsuarioDashboard() {
         
         initComponents();
-       
+        
         ListarChamados();
         estilizarTabela();
- 
+  
         setResizable(false);
         setLocationRelativeTo(null);
-        
         
         NomeUsuario.setText( "Olá, "+ dtUser.getSessaoUsuario());
         qtdAberto.setText(String.valueOf(ChamadoDao.qtdAberto(dtUser.getIdUsuario())));
@@ -334,16 +333,16 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelPerfil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPerfilLayout.setVerticalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPerfilLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelPerfilLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabelPerfil)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelSair.setBackground(new java.awt.Color(0, 120, 231));
@@ -693,7 +692,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jLabel22.setText("Data Abertura");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel23.setForeground(new java.awt.Color(51, 51, 255));
         jLabel23.setText("Ações");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1082,6 +1081,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
 
     private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
         TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
+       telaMeuPerfil.setLocationRelativeTo(this);
         telaMeuPerfil.setVisible(true);
         
         

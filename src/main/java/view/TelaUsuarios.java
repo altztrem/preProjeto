@@ -23,7 +23,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
      * Creates new form TelaUsuarios
      */
     public TelaUsuarios() {
-       
+        
         initComponents();
         ListarUsuario();
         UsuarioDao usuarioDao = new UsuarioDao();

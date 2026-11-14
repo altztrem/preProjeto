@@ -879,6 +879,10 @@ public class TelaNovoChamado extends javax.swing.JFrame {
        dao.CriarChamado(dtChamado,dtUser);
       UsuarioDashboard UserDs = new UsuarioDashboard();
       UserDs.ListarChamados();
+      
+        setVisible(false);
+        UserDs.setVisible(true);
+        this.dispose();
        
     }//GEN-LAST:event_ButtonEnviarChamadoActionPerformed
 
