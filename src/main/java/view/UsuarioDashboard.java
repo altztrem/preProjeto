@@ -38,10 +38,10 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         NomeUsuario.setText( "Olá, "+ dtUser.getSessaoUsuario());
-        qtdAberto.setText(String.valueOf(ChamadoDao.qtdAberto(dtUser.getIdUsuario())));
-        qtdAndamento.setText(String.valueOf(ChamadoDao.qtdAndamento(dtUser.getIdUsuario())));
-        qtdConcluido.setText(String.valueOf(ChamadoDao.qtdConcluido(dtUser.getIdUsuario())));
-        qtdTotal.setText(String.valueOf(ChamadoDao.qtdTotal(dtUser.getIdUsuario())));
+        qtdAberto.setText(String.valueOf(ChamadoDao.qtdAberto(DataUsuario.idUsuarioLogado)));
+        qtdAndamento.setText(String.valueOf(ChamadoDao.qtdAndamento(DataUsuario.idUsuarioLogado)));
+        qtdConcluido.setText(String.valueOf(ChamadoDao.qtdConcluido(DataUsuario.idUsuarioLogado)));
+        qtdTotal.setText(String.valueOf(ChamadoDao.qtdTotal(DataUsuario.idUsuarioLogado)));
                 
         
     }
@@ -1072,7 +1072,8 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     private void jLabelSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSairMouseClicked
         int conf = JOptionPane.showConfirmDialog(null, "Deseja Mesmo Sair ? ");
         if(conf==0){
-        System.exit(0);
+        this.dispose();
+        telaPrincipal.setVisible(true);
         
         }else{
         
@@ -1178,7 +1179,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         modelo.setRowCount(0);
         
         
-        for(DataChamado chamado : ChamadoDao.Lista(DataUsuario.idUsuario)){
+        for(DataChamado chamado : ChamadoDao.Lista(DataUsuario.idUsuarioLogado)){
         modelo.addRow(new Object[]{
         chamado.getIdChamado(),
         chamado.getTitulo(),

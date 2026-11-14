@@ -22,17 +22,13 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     public TelaMeuPerfil() {
         initComponents();
         setLocationRelativeTo(null);
-         UsuarioDao dao = new UsuarioDao();
-        DataUsuario d = new DataUsuario();
-        dao.BuscarUsuario(d.getIdUsuario());
-        d = dao.BuscarUsuario(d.getIdUsuario());       
-        detalheUsuario(d);
-        
-        
-     if(d != null){
-    detalheUsuario(d);
-
-}
+        UsuarioDao dao = new UsuarioDao();
+        DataUsuario d = dao.BuscarUsuario(DataUsuario.idUsuarioLogado);
+        if (d != null) {
+            detalheUsuario(d);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
+        }
     }
 
     /**

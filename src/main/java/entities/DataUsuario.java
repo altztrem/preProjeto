@@ -9,7 +9,8 @@ package entities;
  * @author gablinux
  */
 public class DataUsuario {
-    public static int idUsuario;
+    private int idUsuario;
+    public static int idUsuarioLogado;
     private String nome;
     private String email;
     private String perfil;

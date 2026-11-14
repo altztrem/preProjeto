@@ -26,10 +26,12 @@ public class TelaUsuarios extends javax.swing.JFrame {
         
         initComponents();
         ListarUsuario();
+       
         UsuarioDao usuarioDao = new UsuarioDao();
         jLabelTotalUsuarios.setText(String.valueOf(usuarioDao.qtdTotalUsuario()));
         jLabelAdministradores.setText(String.valueOf(usuarioDao.qtdAdministrador()));
         jLabelTecnicos.setText(String.valueOf(usuarioDao.qtdTecnico()));
+        jTable.removeColumn(jTable.getColumnModel().getColumn(0));
     }
 
     /**
@@ -659,17 +661,17 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jTable.setForeground(new java.awt.Color(23, 43, 67));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "", "", "", "", ""
+                "", "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -687,6 +689,15 @@ public class TelaUsuarios extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable);
+        if (jTable.getColumnModel().getColumnCount() > 0) {
+            jTable.getColumnModel().getColumn(0).setResizable(false);
+            jTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            jTable.getColumnModel().getColumn(1).setResizable(false);
+            jTable.getColumnModel().getColumn(2).setResizable(false);
+            jTable.getColumnModel().getColumn(3).setResizable(false);
+            jTable.getColumnModel().getColumn(4).setResizable(false);
+            jTable.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -712,7 +723,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 438, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -760,7 +771,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(55, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -849,9 +860,8 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
     private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
         TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
-        setVisible(false);
         telaMeuPerfil.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void jPanelPerfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelPerfilMouseEntered
@@ -894,10 +904,11 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
         if (linha >= 0 && coluna == 4) {
             jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            int idChamado = (int) jTable.getValueAt(linha,0);
-            TelaDetalhesChamado detalhes = new TelaDetalhesChamado(idChamado);
-            detalhes.setLocationRelativeTo(this);
-            detalhes.setVisible(true);
+             int idUsuario = (int) jTable.getModel().getValueAt(jTable.convertRowIndexToModel(linha), 0);
+            JOptionPane.showMessageDialog(null, idUsuario);
+            TelaGerenciarUsuario telaGerenciarUsuario = new TelaGerenciarUsuario(idUsuario);
+            telaGerenciarUsuario.setLocationRelativeTo(this);
+            telaGerenciarUsuario.setVisible(true);
 
         }else{
             jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -955,6 +966,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         
         for(DataUsuario Usuario : UsuarioDao.ListaUsuario()){
         modelo.addRow(new Object[]{
+        Usuario.getIdUsuario(),
         Usuario.getNome(),
         Usuario.getEmail(),
         Usuario.getPerfil(),

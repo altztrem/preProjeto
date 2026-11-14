@@ -322,7 +322,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(jLabelPerfil1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -945,7 +945,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelPerfilMouseEntered
 
     private void jLabelPerfil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfil1MouseClicked
-        TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
+         TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
         telaMeuPerfil.setVisible(true);
         
     }//GEN-LAST:event_jLabelPerfil1MouseClicked

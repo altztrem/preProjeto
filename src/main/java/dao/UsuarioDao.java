@@ -68,7 +68,7 @@ public class UsuarioDao {
 
         if (rs.next()) {
             perfil = rs.getString("perfil");
-            dtUsuario.idUsuario = rs.getInt("idUsuario");
+            DataUsuario.idUsuarioLogado = rs.getInt("idUsuario");
         }
 
     } catch (SQLException ex) {

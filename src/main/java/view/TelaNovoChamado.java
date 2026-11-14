@@ -247,6 +247,9 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jPanelPerfil.setBackground(new java.awt.Color(0, 120, 231));
         jPanelPerfil.setPreferredSize(new java.awt.Dimension(161, 37));
         jPanelPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelPerfilMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanelPerfilMouseEntered(evt);
             }
@@ -448,8 +451,8 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jLabel9.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/campo_categoria_20.svg", 20, 20));
         jLabel9.setText("Categoria *");
 
-        jComboPrioridade.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboPrioridade.setBackground(new java.awt.Color(255, 255, 255));
+        jComboPrioridade.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboPrioridade.setForeground(new java.awt.Color(0, 0, 0));
         jComboPrioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a prioridade", "Baixa", "Media", "Alta", "Urgente" }));
         jComboPrioridade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
@@ -483,8 +486,8 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         ButtonCancelar.setForeground(new java.awt.Color(56, 84, 119));
         ButtonCancelar.setText("Cancelar");
 
-        ButtonEnviarChamado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonEnviarChamado.setBackground(new java.awt.Color(0, 120, 231));
+        ButtonEnviarChamado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonEnviarChamado.setForeground(new java.awt.Color(255, 255, 255));
         ButtonEnviarChamado.setText("Enviar Chamado");
         ButtonEnviarChamado.addActionListener(new java.awt.event.ActionListener() {
@@ -876,6 +879,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
        dtChamado.setDescricao(txtDescricao.getText());
        dtChamado.setCategoria((String) jComboCategoria.getSelectedItem());
        dtChamado.setPrioridade((String) jComboPrioridade.getSelectedItem());
+       dtUser.setIdUsuario(DataUsuario.idUsuarioLogado);
        dao.CriarChamado(dtChamado,dtUser);
       UsuarioDashboard UserDs = new UsuarioDashboard();
       UserDs.ListarChamados();
@@ -893,6 +897,11 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jComboPrioridade.setSelectedIndex(0);
 
     }//GEN-LAST:event_ButtonLimparActionPerformed
+
+    private void jPanelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelPerfilMouseClicked
+        TelaMeuPerfil telaMeuPerfil = new TelaMeuPerfil();
+        telaMeuPerfil.setVisible(true);
+    }//GEN-LAST:event_jPanelPerfilMouseClicked
 
     /**
      * @param args the command line arguments
