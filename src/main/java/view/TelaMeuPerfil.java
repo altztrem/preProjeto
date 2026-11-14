@@ -117,6 +117,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         txtNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNome.setForeground(new java.awt.Color(0, 0, 0));
         txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
+        txtNome.setEnabled(false);
         txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNomeFocusGained(evt);
@@ -152,6 +153,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(0, 0, 0));
         txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
+        txtEmail.setEnabled(false);
         txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtEmailFocusGained(evt);
@@ -187,6 +189,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTelefone.setForeground(new java.awt.Color(0, 0, 0));
         txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
+        txtTelefone.setEnabled(false);
         txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtTelefoneFocusGained(evt);
@@ -503,13 +506,17 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        UsuarioDao dao = new UsuarioDao();
+        DataUsuario d = dao.BuscarUsuario(DataUsuario.idUsuarioLogado);        
+        SalvarAlteracoes(d);
+        dao.update(d);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        txtNome.setEditable(true);
-        txtEmail.setEditable(true);
-        txtTelefone.setEditable(true);
+        txtNome.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtTelefone.setEnabled(true);
         jComboSetor.setEnabled(true);
       
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -575,12 +582,20 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         txtNome.setText(d.getNome());
         txtEmail.setText(d.getEmail());
         txtTelefone.setText(d.getTelefone());
-        jComboSetor.insertItemAt(String.valueOf(d.getSetor()), 0);
+        jComboSetor.setSelectedItem(d.getSetor());
         jLabel9.setText(d.getNome());
         jLabel10.setText(d.getEmail());
     
     
     }
+     private void SalvarAlteracoes(DataUsuario d){
+     d.setNome(txtNome.getText());
+     d.setEmail(txtEmail.getText());
+     d.setTelefone(txtTelefone.getText());
+     d.setSetor(String.valueOf(jComboSetor.getSelectedItem()));
+     
+     
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

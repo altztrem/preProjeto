@@ -134,7 +134,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         BarraLateral.setBackground(new java.awt.Color(0, 120, 231));
         BarraLateral.setForeground(new java.awt.Color(255, 255, 255));
 
-        JPanelInicio.setBackground(new java.awt.Color(33, 134, 230));
+        JPanelInicio.setBackground(new java.awt.Color(0, 120, 231));
         JPanelInicio.setPreferredSize(new java.awt.Dimension(161, 37));
         JPanelInicio.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
