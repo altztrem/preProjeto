@@ -13,24 +13,37 @@ import javax.swing.JOptionPane;
  * @author gablinux
  */
 public class TelaGerenciarUsuario extends javax.swing.JFrame {
+     private String nomeInicial;
+   private String emailInicial;
+    private String PerfilInicial;
+    private String setorInicial;
+    private String telefoneInicial;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaGerenciarUsuario.class.getName());
 
-    /**
-     * Creates new form TelaGerenciarUsuario
-     */
+   private  int idUsuario;
     public TelaGerenciarUsuario(int idUsuario) {
         initComponents();
-       
+       this.idUsuario = idUsuario;
            
         UsuarioDao dao = new UsuarioDao();
-        DataUsuario d = dao.BuscarUsuario(idUsuario);
+        DataUsuario d = new DataUsuario();
+        
+        d = dao.BuscarUsuario(idUsuario);
         if (d != null) {
             detalhesDados(d);
         } else {
             JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
         }
+   nomeInicial = txtNome.getText();
+    emailInicial = txtEmail.getText();
+  PerfilInicial = String.valueOf(comboPerfil.getSelectedItem());
+   setorInicial = txtSetor.getText();
+   telefoneInicial = txtTelefone.getText();
+   
+  
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,7 +181,16 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         btnSalvar.setForeground(new java.awt.Color(23, 43, 67));
         btnSalvar.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/confirmar_branco_20.svg", 20, 20));
         btnSalvar.setText("Salvar alterações");
-        btnSalvar.setEnabled(false);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+        btnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnSalvarKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -309,6 +331,23 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
             }
             }//GEN-LAST:event_comboPerfilActionPerformed
 
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+          
+        UsuarioDao dao = new UsuarioDao();
+        DataUsuario d = new DataUsuario();
+        
+        d = dao.BuscarUsuario(idUsuario);
+      d.setNome(String.valueOf(txtNome.getText()));
+      d.setEmail(String.valueOf(txtEmail.getText()));
+      d.setSetor(String.valueOf(txtSetor.getText()));
+      d.setPerfil(String.valueOf(comboPerfil.getSelectedItem()));
+      dao.update(d);
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnSalvarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyReleased
+        verificarAlteracao();
+    }//GEN-LAST:event_btnSalvarKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -333,6 +372,15 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(() -> new TelaGerenciarUsuario().setVisible(true));
     }
+    public void verificarAlteracao(){
+   
+   
+    if(!txtNome.getText().equals(nomeInicial) || !txtEmail.getText().equals(emailInicial)|| !txtSetor.getText().equals(setorInicial) || !txtTelefone.getText().equals(telefoneInicial) || !comboPerfil.equals(PerfilInicial)){
+    btnSalvar.setEnabled(true);
+    }
+    
+        }
+
     
     
     public void detalhesDados(DataUsuario d){
@@ -340,6 +388,8 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         txtEmail.setText(d.getEmail());
         txtTelefone.setText(d.getTelefone());
         txtSetor.setText(d.getSetor());
+        
+        
         if ("Usuario".equalsIgnoreCase(d.getPerfil()) || "Usuário".equalsIgnoreCase(d.getPerfil())) {
             comboPerfil.setSelectedItem("Usuário");
         } else if ("Tecnico".equalsIgnoreCase(d.getPerfil()) || "Técnico".equalsIgnoreCase(d.getPerfil())) {

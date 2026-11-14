@@ -49,6 +49,40 @@ public class UsuarioDao {
         
         }
     }
+     public void update(DataUsuario d){
+      
+            Connection con = ConnectionFactory.getConnection();
+            PreparedStatement stmt = null;
+  
+              try {
+            stmt = con.prepareStatement("UPDATE usuario SET nome = ? , email = ? , SenhaHash =   ? , perfil = ?, setor = ? , telefone = ? WHERE idUsuario = ?");
+            stmt.setString(1, d.getNome());
+            stmt.setString(2, d.getEmail());
+            stmt.setString(3, d.getSenhaHash());
+            stmt.setString(4, d.getPerfil());
+            stmt.setString(5, d.getSetor());
+            stmt.setString(6, d.getTelefone());
+            stmt.setInt(7, d.getIdUsuario());
+            
+            
+            stmt.executeUpdate();
+            
+            
+            
+
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso !");
+        } catch (SQLException ex) {
+              JOptionPane.showMessageDialog(null, " Algo deu errado "+ex);
+        }finally{
+            
+            
+        ConnectionFactory.closeConnection(con, stmt);
+        
+        
+        }
+    }
+    
+    
               
         public String checkLogin(String email, String senha, String nome) {
 

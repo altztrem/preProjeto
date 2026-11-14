@@ -433,8 +433,11 @@
               <Connection code="new com.formdev.flatlaf.extras.FlatSVGIcon(&quot;icons/confirmar_branco_20.svg&quot;, 20, 20)" type="code"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salvar altera&#xe7;&#xf5;es"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnSalvarKeyReleased"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
