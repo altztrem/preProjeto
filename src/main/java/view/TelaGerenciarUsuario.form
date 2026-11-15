@@ -51,8 +51,8 @@
                           <Component id="lblAvatar" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelNome" min="-2" pref="610" max="-2" attributes="0"/>
                               <Component id="jLabelPerfil" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="jLabelNome" min="-2" pref="307" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="lblDados" min="-2" pref="770" max="-2" attributes="0"/>

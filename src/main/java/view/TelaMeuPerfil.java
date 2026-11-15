@@ -103,7 +103,6 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel1.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/usuario_20px.svg", 20, 20));
         jLabel1.setText("Nome Completo");
 
-        txtNome.setEditable(false);
         txtNome.setBackground(new java.awt.Color(255, 255, 255));
         txtNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNome.setForeground(new java.awt.Color(0, 0, 0));
@@ -139,7 +138,6 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel4.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_email_20.svg", 20, 20));
         jLabel4.setText("E-mail");
 
-        txtEmail.setEditable(false);
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(0, 0, 0));
@@ -175,7 +173,6 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jLabel5.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_telefone_20.svg", 20, 20));
         jLabel5.setText("Telefone");
 
-        txtTelefone.setEditable(false);
         txtTelefone.setBackground(new java.awt.Color(255, 255, 255));
         txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTelefone.setForeground(new java.awt.Color(0, 0, 0));
@@ -406,17 +403,17 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(57, 57, 57)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(118, 118, 118)
-                                    .addComponent(jLabel9))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(89, 89, 89)
                                     .addComponent(jLabel10))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(75, 75, 75)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(57, 57, 57)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(26, 26, 26)

@@ -6,7 +6,6 @@ package view;
 
 import dao.ChamadoDao;
 import entities.DataChamado;
-import entities.DataUsuario;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -24,7 +23,6 @@ import javax.swing.JOptionPane;
      * Creates new form TelaDetalhesChamado
      */
     public  TelaDetalhesChamado(int idChamado) {
-        DataUsuario d = new DataUsuario();
         setSize(441, 705);
         initComponents();
         setLocationRelativeTo(this);
@@ -32,7 +30,7 @@ import javax.swing.JOptionPane;
          DataChamado c = dao.BuscarChamado(idChamado);
 
     if (c != null) {
-        detalhesChamado(c,d);
+        detalhesChamado(c);
     }
    
 }
@@ -376,14 +374,16 @@ import javax.swing.JOptionPane;
     
    
     
-    public void detalhesChamado(DataChamado c, DataUsuario d){
+    public void detalhesChamado(DataChamado c){
     jLabelID.setText("#"+c.getIdChamado());
     jTextDescricao.setText(c.getDescricao());
     jLabelCategoria.setText("Categoria : "+c.getCategoria());
     jLabelPrioridade.setText("Prioridade : "+c.getPrioridade());
     jLabelTitulo.setText(c.getTitulo());
     jLabelStatus.setText(c.getStatusChamado() == null ? "" : c.getStatusChamado().trim());
-    jLabelSolicitante.setText("Solicitante: "+ d.getNome());
+    String nomeSolicitante = c.getUsuario().getNome();
+    jLabelSolicitante.setText("Solicitante: " + nomeSolicitante);
+
     iconSetagem();
 
     }

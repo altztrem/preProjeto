@@ -94,7 +94,12 @@ public class ChamadoDao {
         
         try {
 
-            stmt = con.prepareStatement("SELECT idChamado,titulo,descricao,prioridade,categoria,statusChamado FROM chamado WHERE IdChamado = ?");
+            stmt = con.prepareStatement(
+                "SELECT c.idChamado, c.titulo, c.descricao, c.prioridade, c.categoria, "
+                + "c.statusChamado, u.idUsuario, u.nome AS nomeSolicitante "
+                + "FROM chamado c INNER JOIN usuario u ON c.idUsuario = u.idUsuario "
+                + "WHERE c.idChamado = ?"
+            );
             stmt.setInt(1, idChamado);
 
             rs = stmt.executeQuery();
@@ -107,6 +112,10 @@ public class ChamadoDao {
             d.setPrioridade(rs.getString("prioridade"));
             d.setCategoria(rs.getString("categoria"));
             d.setStatusChamado(rs.getString("statusChamado"));
+            DataUsuario solicitante = new DataUsuario();
+            solicitante.setIdUsuario(rs.getInt("idUsuario"));
+            solicitante.setNome(rs.getString("nomeSolicitante"));
+            d.setUsuario(solicitante);
             
             }
            

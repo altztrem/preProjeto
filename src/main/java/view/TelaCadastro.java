@@ -774,8 +774,13 @@ public class TelaCadastro extends javax.swing.JFrame {
         AvisoEmail.setText("");
         AvisoSenha.setText("");
         AvisoTelefone.setText("");
+        String regexEmail = "^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+$";
+        String regexTelefone = "^(?:\\+55\\s?)?(?:\\(?\\d{2}\\)?\\s?)?(?:9\\d{4}|\\d{4})[-\\s]?\\d{4}$";
+        String regexNome = "^[\\p{L}]+(?:[ '\\-][\\p{L}]+)*$";
         
-        if(txtEmail.getText().indexOf('@')==-1){
+        
+        
+        if(!txtEmail.getText().matches(regexEmail)){
             AvisoEmail.setText("* E-mail Invalido, Digite Novamente !");
             txtEmail.setText("");
             txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,0,51)));
@@ -795,14 +800,21 @@ public class TelaCadastro extends javax.swing.JFrame {
             verif = false;
 
         }
-        if (txtNome.getText().length() <=0) {
+        if (txtNome.getText().length() <=0 ) {
             AvisoNome.setText("* Nome incompleto !");
             txtNome.setText("");
             txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,0,51)));
             verif = false;
         }
+        if(!txtNome.getText().matches(regexNome)){
+         AvisoNome.setText("* Nome invalido !");
+            txtNome.setText("");
+            txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,0,51)));
+            verif = false;
+        }
+        
 
-        if (txtTelefone.getText().replaceAll("[^0-9]", "").length() < 11 ) {
+        if (!txtTelefone.getText().matches(regexTelefone)) {
             AvisoTelefone.setText("* Telefone incompleto !");
             txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,0,51)));
             verif = false;
@@ -846,9 +858,9 @@ public class TelaCadastro extends javax.swing.JFrame {
             
             inf.setSenha(senhaTexto);
             inf.setNome(txtNome.getText());
-            inf.setEmail(txtEmail.getText());
+            inf.setEmail(txtEmail.getText().trim());
             inf.setPerfil("Usuario");
-            inf.setTelefone(txtTelefone.getText().replaceAll("[^0-9]", "")); 
+            inf.setTelefone(txtTelefone.getText().replaceAll("[^0-9]", "").trim()); 
             inf.setSetor((String) jComboSetor.getSelectedItem());
             
                 

@@ -669,8 +669,9 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         jLabel22.setForeground(new java.awt.Color(23, 43, 67));
         jLabel22.setText("Prioridade");
 
+        jLabel23.setBackground(new java.awt.Color(0, 51, 255));
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(23, 43, 67));
+        jLabel23.setForeground(new java.awt.Color(51, 51, 255));
         jLabel23.setText("Ações");
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
