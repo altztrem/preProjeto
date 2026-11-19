@@ -32,6 +32,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jLabelAdministradores.setText(String.valueOf(usuarioDao.qtdAdministrador()));
         jLabelTecnicos.setText(String.valueOf(usuarioDao.qtdTecnico()));
         jTable.removeColumn(jTable.getColumnModel().getColumn(0));
+        configurarBotaoAcao();
     }
 
     /**
@@ -661,17 +662,17 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jTable.setForeground(new java.awt.Color(23, 43, 67));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "", "", "", "", ""
+                "", "", "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -697,6 +698,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(3).setResizable(false);
             jTable.getColumnModel().getColumn(4).setResizable(false);
             jTable.getColumnModel().getColumn(5).setResizable(false);
+            jTable.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -723,7 +725,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 438, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -748,7 +750,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                                 .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1173, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel54)
                             .addComponent(jLabel53))
-                        .addContainerGap(33, Short.MAX_VALUE))))
+                        .addContainerGap(27, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -758,7 +760,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BarraLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                        .addGap(0, 0, 0))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel53)
@@ -771,7 +773,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(15, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -899,21 +901,6 @@ public class TelaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10FocusGained
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        int linha = jTable.rowAtPoint(evt.getPoint());
-        int coluna = jTable.columnAtPoint(evt.getPoint());
-
-        if (linha >= 0 && coluna == 4) {
-            jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-             int idUsuario = (int) jTable.getModel().getValueAt(jTable.convertRowIndexToModel(linha), 0);
-            JOptionPane.showMessageDialog(null, idUsuario);
-            TelaGerenciarUsuario telaGerenciarUsuario = new TelaGerenciarUsuario(idUsuario);
-            telaGerenciarUsuario.setLocationRelativeTo(this);
-            telaGerenciarUsuario.setVisible(true);
-
-        }else{
-            jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        }
     }//GEN-LAST:event_jTableMouseClicked
 
     private void jTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseEntered
@@ -959,6 +946,53 @@ public class TelaUsuarios extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new TelaUsuarios().setVisible(true));
     }
     
+    private void configurarBotaoAcao() {
+        jTable.getColumnModel().getColumn(4).setMinWidth(20);
+        jTable.getColumnModel().getColumn(4).setMaxWidth(20);
+        jTable.getColumnModel().getColumn(4).setPreferredWidth(20);
+        jTable.getColumnModel().getColumn(4).setCellRenderer(
+                (table, value, isSelected, hasFocus, row, column) -> {
+                    javax.swing.JPanel separador = new javax.swing.JPanel();
+                    separador.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                    separador.setBorder(javax.swing.BorderFactory.createMatteBorder(
+                            0, 0, 0, 1, new java.awt.Color(180, 201, 216)));
+                    return separador;
+                });
+        jTable.getColumnModel().getColumn(5).setCellRenderer(
+                (table, value, isSelected, hasFocus, row, column) -> {
+                    javax.swing.JButton botao = new javax.swing.JButton("Gerenciar Usuario");
+                    botao.setBackground(new java.awt.Color(0, 120, 231));
+                    botao.setForeground(java.awt.Color.WHITE);
+                    return botao;
+                });
+        jTable.getColumnModel().getColumn(5).setCellEditor(
+                new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()) {
+                    private final javax.swing.JButton botao = new javax.swing.JButton("Gerenciar Usuario");
+                    private int id;
+                    {
+                        botao.setBackground(new java.awt.Color(0, 120, 231));
+                        botao.setForeground(java.awt.Color.WHITE);
+                        botao.addActionListener(e -> {
+                            fireEditingStopped();
+                            TelaGerenciarUsuario tela = new TelaGerenciarUsuario(id);
+                            tela.setLocationRelativeTo(TelaUsuarios.this);
+                            tela.setVisible(true);
+                        });
+                    }
+                    @Override
+                    public java.awt.Component getTableCellEditorComponent(
+                            javax.swing.JTable table, Object value, boolean isSelected, int row, int column) {
+                        int linhaModelo = table.convertRowIndexToModel(row);
+                        id = ((Number) table.getModel().getValueAt(linhaModelo, 0)).intValue();
+                        return botao;
+                    }
+                    @Override
+                    public Object getCellEditorValue() {
+                        return "Gerenciar Usuario";
+                    }
+                });
+    }
+
      public void ListarUsuario(){
         DefaultTableModel  modelo = (DefaultTableModel) jTable.getModel();
         modelo.setRowCount(0);
@@ -971,6 +1005,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         Usuario.getEmail(),
         Usuario.getPerfil(),
         Usuario.getSetor(),
+        "",
         "Gerenciar Usuario"
        
         

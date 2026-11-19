@@ -25,7 +25,7 @@ public class ChamadoDao {
             Connection con = ConnectionFactory.getConnection();
             PreparedStatement stmt = null;
               try {
-            stmt = con.prepareStatement("INSERT INTO chamado(titulo,descricao,categoria,prioridade,IdUsuario) VALUES (?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO chamado(titulo,descricao,categoria,prioridade,IdUsuario,dataAbertura) VALUES (?,?,?,?,?,CURRENT_TIMESTAMP)");
             stmt.setString(1, dChamado.getTitulo());
             stmt.setString(2, dChamado.getDescricao());
             stmt.setString(3, dChamado.getCategoria());
@@ -55,7 +55,7 @@ public class ChamadoDao {
       List<DataChamado> Chamados = new ArrayList<>();
       
         try {
-            stmt = con.prepareStatement("SELECT idChamado,titulo,statusChamado FROM chamado WHERE IdUsuario = ?");
+            stmt = con.prepareStatement("SELECT idChamado,titulo,statusChamado,dataAbertura FROM chamado WHERE IdUsuario = ?");
             stmt.setInt(1, IdUsuario);
             rs =  stmt.executeQuery();
               
@@ -65,6 +65,9 @@ public class ChamadoDao {
                   d.setIdChamado(rs.getInt("idChamado"));
                   d.setTitulo(rs.getString("titulo"));
                   d.setStatusChamado(rs.getString("statusChamado"));
+                  if (rs.getTimestamp("dataAbertura") != null) {
+                      d.setDataAbertura(sdf2.format(rs.getTimestamp("dataAbertura")));
+                  }
                   
                   Chamados.add(d);
                   
@@ -96,7 +99,7 @@ public class ChamadoDao {
 
             stmt = con.prepareStatement(
                 "SELECT c.idChamado, c.titulo, c.descricao, c.prioridade, c.categoria, "
-                + "c.statusChamado, u.idUsuario, u.nome AS nomeSolicitante "
+                + "c.statusChamado, c.dataAbertura, u.idUsuario, u.nome AS nomeSolicitante "
                 + "FROM chamado c INNER JOIN usuario u ON c.idUsuario = u.idUsuario "
                 + "WHERE c.idChamado = ?"
             );
@@ -112,6 +115,9 @@ public class ChamadoDao {
             d.setPrioridade(rs.getString("prioridade"));
             d.setCategoria(rs.getString("categoria"));
             d.setStatusChamado(rs.getString("statusChamado"));
+            if (rs.getTimestamp("dataAbertura") != null) {
+                d.setDataAbertura(sdf2.format(rs.getTimestamp("dataAbertura")));
+            }
             DataUsuario solicitante = new DataUsuario();
             solicitante.setIdUsuario(rs.getInt("idUsuario"));
             solicitante.setNome(rs.getString("nomeSolicitante"));

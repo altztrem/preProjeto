@@ -376,6 +376,7 @@ import javax.swing.JOptionPane;
     
     public void detalhesChamado(DataChamado c){
     jLabelID.setText("#"+c.getIdChamado());
+    jLabel8.setText(c.getDataAbertura() == null ? "Não informada" : c.getDataAbertura());
     jTextDescricao.setText(c.getDescricao());
     jLabelCategoria.setText("Categoria : "+c.getCategoria());
     jLabelPrioridade.setText("Prioridade : "+c.getPrioridade());

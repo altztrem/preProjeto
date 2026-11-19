@@ -24,6 +24,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
      */
     public TecnicoDashboard() {
         initComponents();
+        configurarBotaoChamado();
         ListarChamados();
         DataChamado dtChamado = new DataChamado();
         TecnicoDao TecnicoDao = new TecnicoDao();
@@ -721,17 +722,17 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         jTable.setForeground(new java.awt.Color(23, 43, 67));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "", "", "", "", ""
+                "", "", "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -756,6 +757,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(3).setResizable(false);
             jTable.getColumnModel().getColumn(4).setResizable(false);
             jTable.getColumnModel().getColumn(5).setResizable(false);
+            jTable.getColumnModel().getColumn(6).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -814,7 +816,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(46, 46, 46)
                             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 83, Short.MAX_VALUE))
+                .addGap(0, 70, Short.MAX_VALUE))
             .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel14Layout.setVerticalGroup(
@@ -849,14 +851,14 @@ public class TecnicoDashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -864,9 +866,9 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -881,33 +883,13 @@ public class TecnicoDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10FocusGained
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-                       
-    int linha = jTable.rowAtPoint(evt.getPoint());
-    int coluna = jTable.columnAtPoint(evt.getPoint());
-
-    if (linha >= 0 && coluna == 5) {
-         jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        int idChamado = Integer.parseInt(jTable.getValueAt(linha, 0).toString());
-
-     
-        if (janelaDetalhesAtual != null) {
-            janelaDetalhesAtual.dispose();
-        }
-
-     
-        janelaDetalhesAtual = new TelaDetalhesChamado(idChamado);
-        janelaDetalhesAtual.setLocationRelativeTo(this);
-        janelaDetalhesAtual.setVisible(true);
-    }
-
-
     }//GEN-LAST:event_jTableMouseClicked
 
     private void jTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseEntered
         int linha = jTable.rowAtPoint(evt.getPoint());
         int coluna = jTable.columnAtPoint(evt.getPoint());
 
-        if (linha >= 0 && coluna == 5) {
+        if (linha >= 0 && coluna == 6) {
         jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }else{
 
@@ -1050,6 +1032,61 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TecnicoDashboard().setVisible(true));
     }
+    private void configurarBotaoChamado() {
+        jTable.getColumnModel().getColumn(5).setMinWidth(20);
+        jTable.getColumnModel().getColumn(5).setMaxWidth(20);
+        jTable.getColumnModel().getColumn(5).setPreferredWidth(20);
+        jTable.getColumnModel().getColumn(5).setCellRenderer(
+                (table, value, isSelected, hasFocus, row, column) -> {
+                    javax.swing.JPanel separador = new javax.swing.JPanel();
+                    separador.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                    separador.setBorder(javax.swing.BorderFactory.createMatteBorder(
+                            0, 0, 0, 1, new java.awt.Color(180, 201, 216)));
+                    return separador;
+                });
+        jTable.getColumnModel().getColumn(6).setCellRenderer(
+                (table, value, isSelected, hasFocus, row, column) -> {
+                    javax.swing.JButton botao = new javax.swing.JButton("Gerenciar Chamado");
+                    botao.setBackground(new java.awt.Color(0, 120, 231));
+                    botao.setForeground(java.awt.Color.WHITE);
+                    return botao;
+                });
+
+        jTable.getColumnModel().getColumn(6).setCellEditor(
+                new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()) {
+                    private final javax.swing.JButton botao = new javax.swing.JButton("Gerenciar Chamado");
+                    private int idChamado;
+
+                    {
+                        botao.setBackground(new java.awt.Color(0, 120, 231));
+                        botao.setForeground(java.awt.Color.WHITE);
+                        botao.addActionListener(e -> {
+                            fireEditingStopped();
+                            if (janelaDetalhesAtual != null) {
+                                janelaDetalhesAtual.dispose();
+                            }
+                            janelaDetalhesAtual = new TelaDetalhesChamado(idChamado);
+                            janelaDetalhesAtual.setLocationRelativeTo(TecnicoDashboard.this);
+                            janelaDetalhesAtual.setVisible(true);
+                        });
+                    }
+
+                    @Override
+                    public java.awt.Component getTableCellEditorComponent(
+                            javax.swing.JTable table, Object value, boolean isSelected,
+                            int row, int column) {
+                        int linhaModelo = table.convertRowIndexToModel(row);
+                        idChamado = Integer.parseInt(table.getModel().getValueAt(linhaModelo, 0).toString());
+                        return botao;
+                    }
+
+                    @Override
+                    public Object getCellEditorValue() {
+                        return "Gerenciar Chamado";
+                    }
+                });
+    }
+
    public void ListarChamados() {
     DefaultTableModel modelo = (DefaultTableModel) jTable.getModel();
     modelo.setRowCount(0);
@@ -1058,7 +1095,9 @@ public class TecnicoDashboard extends javax.swing.JFrame {
 
     for (DataChamado chamado : dao.ListaTotalChamados()) {
 
-        if (!chamado.getStatusChamado().equals("Concluido")) {
+        String status = chamado.getStatusChamado();
+        if (status != null && (status.trim().equalsIgnoreCase("Aberto")
+                || status.trim().equalsIgnoreCase("Andamento"))) {
 
             modelo.addRow(new Object[]{
                 chamado.getIdChamado(),
@@ -1066,6 +1105,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
                 chamado.getTitulo(),
                 chamado.getStatusChamado(),
                 chamado.getPrioridade(),
+                "",
                 "Gerenciar Chamado"
             }); 
         }     

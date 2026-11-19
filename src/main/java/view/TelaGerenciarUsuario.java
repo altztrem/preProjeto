@@ -75,6 +75,7 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         lblAviso = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        btnCancelar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -152,7 +153,7 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
 
         comboPerfil.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         comboPerfil.setForeground(new java.awt.Color(23, 43, 67));
-        comboPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuário", "Técnico", "Administrador" }));
+        comboPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Usuario", "Tecnico", "Administrador" }));
         comboPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboPerfilActionPerformed(evt);
@@ -177,8 +178,9 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
             }
         });
 
+        btnSalvar.setBackground(new java.awt.Color(0, 120, 231));
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(23, 43, 67));
+        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btnSalvar.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/confirmar_branco_20.svg", 20, 20));
         btnSalvar.setText("Salvar alterações");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -189,6 +191,16 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         btnSalvar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 btnSalvarKeyReleased(evt);
+            }
+        });
+
+        btnCancelar1.setBackground(new java.awt.Color(255, 0, 51));
+        btnCancelar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCancelar1.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelar1.setText("Deletar Usuario");
+        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar1ActionPerformed(evt);
             }
         });
 
@@ -239,9 +251,11 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblAviso, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(372, 372, 372)
+                        .addGap(216, 216, 216)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -288,7 +302,8 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -347,6 +362,14 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
     private void btnSalvarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyReleased
         verificarAlteracao();
     }//GEN-LAST:event_btnSalvarKeyReleased
+
+    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+       int opcao = JOptionPane.showConfirmDialog(null, "Deseja Realmente Excluir o Usuario?", "Exclusão", JOptionPane.YES_NO_OPTION);
+       if(opcao==0){
+       this.dispose();
+       
+       }
+    }//GEN-LAST:event_btnCancelar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,6 +436,7 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCancelar1;
     private javax.swing.JButton btnRedefinirSenha;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox comboPerfil;
