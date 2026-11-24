@@ -13,11 +13,7 @@ import javax.swing.JOptionPane;
  * @author gablinux
  */
 public class TelaGerenciarUsuario extends javax.swing.JFrame {
-     private String nomeInicial;
-   private String emailInicial;
-    private String PerfilInicial;
-    private String setorInicial;
-    private String telefoneInicial;
+     
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaGerenciarUsuario.class.getName());
 
@@ -35,11 +31,6 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
         }
-   nomeInicial = txtNome.getText();
-    emailInicial = txtEmail.getText();
-  PerfilInicial = String.valueOf(comboPerfil.getSelectedItem());
-   setorInicial = txtSetor.getText();
-   telefoneInicial = txtTelefone.getText();
    
   
     }
@@ -360,7 +351,7 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnSalvarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSalvarKeyReleased
-        verificarAlteracao();
+        
     }//GEN-LAST:event_btnSalvarKeyReleased
 
     private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
@@ -395,14 +386,7 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(() -> new TelaGerenciarUsuario().setVisible(true));
     }
-    public void verificarAlteracao(){
-   
-   
-    if(!txtNome.getText().equals(nomeInicial) || !txtEmail.getText().equals(emailInicial)|| !txtSetor.getText().equals(setorInicial) || !txtTelefone.getText().equals(telefoneInicial) || !comboPerfil.equals(PerfilInicial)){
-    btnSalvar.setEnabled(true);
-    }
-    
-        }
+  
 
     
     

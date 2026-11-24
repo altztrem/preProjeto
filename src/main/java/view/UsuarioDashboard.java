@@ -33,7 +33,6 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         
         ListarChamados();
         estilizarTabela();
-        configurarBotaoAcao();
   
         setResizable(false);
         setLocationRelativeTo(null);
@@ -741,17 +740,17 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jTable.setForeground(new java.awt.Color(23, 43, 67));
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "", "", "", "", "", ""
+                "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -781,9 +780,6 @@ public class UsuarioDashboard extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(4).setResizable(false);
             jTable.getColumnModel().getColumn(4).setPreferredWidth(0);
             jTable.getColumnModel().getColumn(4).setHeaderValue("");
-            jTable.getColumnModel().getColumn(5).setResizable(false);
-            jTable.getColumnModel().getColumn(5).setPreferredWidth(0);
-            jTable.getColumnModel().getColumn(5).setHeaderValue("");
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1098,6 +1094,25 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+      int linha = jTable.rowAtPoint(evt.getPoint());
+      int coluna = jTable.columnAtPoint(evt.getPoint());
+
+    if (linha >= 0 && coluna == 4) {
+    jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    int idChamado = (int) jTable.getValueAt(linha,0);
+   TelaDetalhesChamado detalhes = new TelaDetalhesChamado(idChamado);
+        detalhes.setLocationRelativeTo(this);
+        detalhes.setVisible(true);
+
+
+
+}else{
+        jTable.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+    }
+
+
+
     }//GEN-LAST:event_jTableMouseClicked
 
     private void jTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseEntered
@@ -1169,53 +1184,6 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     }
  
     
-    private void configurarBotaoAcao() {
-        jTable.getColumnModel().getColumn(4).setMinWidth(20);
-        jTable.getColumnModel().getColumn(4).setMaxWidth(20);
-        jTable.getColumnModel().getColumn(4).setPreferredWidth(20);
-        jTable.getColumnModel().getColumn(4).setCellRenderer(
-                (table, value, isSelected, hasFocus, row, column) -> {
-                    javax.swing.JPanel separador = new javax.swing.JPanel();
-                    separador.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
-                    separador.setBorder(javax.swing.BorderFactory.createMatteBorder(
-                            0, 0, 0, 1, new java.awt.Color(180, 201, 216)));
-                    return separador;
-                });
-        jTable.getColumnModel().getColumn(5).setCellRenderer(
-                (table, value, isSelected, hasFocus, row, column) -> {
-                    javax.swing.JButton botao = new javax.swing.JButton("Ver detalhes");
-                    botao.setBackground(new java.awt.Color(0, 120, 231));
-                    botao.setForeground(java.awt.Color.WHITE);
-                    return botao;
-                });
-        jTable.getColumnModel().getColumn(5).setCellEditor(
-                new javax.swing.DefaultCellEditor(new javax.swing.JCheckBox()) {
-                    private final javax.swing.JButton botao = new javax.swing.JButton("Ver detalhes");
-                    private int id;
-                    {
-                        botao.setBackground(new java.awt.Color(0, 120, 231));
-                        botao.setForeground(java.awt.Color.WHITE);
-                        botao.addActionListener(e -> {
-                            fireEditingStopped();
-                            TelaDetalhesChamado tela = new TelaDetalhesChamado(id);
-                            tela.setLocationRelativeTo(UsuarioDashboard.this);
-                            tela.setVisible(true);
-                        });
-                    }
-                    @Override
-                    public java.awt.Component getTableCellEditorComponent(
-                            javax.swing.JTable table, Object value, boolean isSelected, int row, int column) {
-                        int linhaModelo = table.convertRowIndexToModel(row);
-                        id = ((Number) table.getModel().getValueAt(linhaModelo, 0)).intValue();
-                        return botao;
-                    }
-                    @Override
-                    public Object getCellEditorValue() {
-                        return "Ver detalhes";
-                    }
-                });
-    }
-
     public void ListarChamados(){
         DefaultTableModel  modelo = (DefaultTableModel) jTable.getModel();
         modelo.setRowCount(0);
@@ -1225,7 +1193,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         modelo.addRow(new Object[]{
         chamado.getIdChamado(),
         chamado.getTitulo(),
-        chamado.getStatus(), chamado.getDataAbertura(), "", "Ver detalhes"
+        chamado.getStatus(), chamado.getDataAbertura(), "Ver detalhes"
         
         
         });
