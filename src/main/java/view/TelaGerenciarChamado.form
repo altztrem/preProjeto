@@ -390,11 +390,17 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salvar altera&#xe7;&#xf5;es"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCancelar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCategoria">
           <Properties>
@@ -433,9 +439,8 @@
               <StringArray count="5">
                 <StringItem index="0" value="Selecione o Status"/>
                 <StringItem index="1" value="Aberto"/>
-                <StringItem index="2" value="Atendimento"/>
+                <StringItem index="2" value="Andamento"/>
                 <StringItem index="3" value="Concluido"/>
-                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
           </Properties>

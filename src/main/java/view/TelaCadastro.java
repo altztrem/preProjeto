@@ -6,7 +6,6 @@ package view;
 
 import dao.UsuarioDao;
 import entities.DataUsuario;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.Graphics;
@@ -20,18 +19,28 @@ import java.awt.Color;
  * @author gablinux
  */
 public class TelaCadastro extends javax.swing.JFrame {
-    private ImageIcon olhoAberto;
-    private ImageIcon olhoFechado;
+    private javax.swing.Icon olhoAberto;
+    private javax.swing.Icon olhoFechado;
     private boolean olhoVisivel;
+    private boolean olhoConfirmacaoVisivel;
+    private char caractereSenha;
+    private char caractereSenhaConfirmacao;
     boolean verif;
    DataUsuario inf = new DataUsuario();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaCadastro.class.getName());
 
     public TelaCadastro() {
-        setSize(846, 630);
+        
         initComponents();
+        caractereSenha = jtxtSenha.getEchoChar();
+        caractereSenhaConfirmacao = txtSenhaConf.getEchoChar();
+        olhoAberto = new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20);
+        olhoFechado = new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_fechado.svg", 24, 24);
+        setSize(846, 630);
+        setResizable(false);
         setLocationRelativeTo(null);
+        
     }
     
     
@@ -43,9 +52,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jPanel14 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField5 = new javax.swing.JTextField();
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -56,9 +63,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel38 = new javax.swing.JLabel();
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel45 = new javax.swing.JLabel();
         jPanelFundoCinza3 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
@@ -67,9 +72,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabelSenha2 = new javax.swing.JLabel();
         buttonCadastrar = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel41 = new javax.swing.JLabel();
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AvisoNome = new javax.swing.JLabel();
         AvisoSenha = new javax.swing.JLabel();
         jtxtSenha = new javax.swing.JPasswordField();
@@ -101,8 +104,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel29.setText("Telefone");
 
+        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField5.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -149,10 +154,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("gerenciar e acompanhar seus chamados");
 
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel37.setBackground(new java.awt.Color(0, 120, 231));
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
 
-        jLabel38.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/chamado_32px_branco.svg", 32, 32)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel38.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/chamado_32px_branco.svg", 32, 32));
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
@@ -200,7 +207,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(6, 6, 6))
                     .addComponent(jLabel37))
@@ -216,7 +223,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel45)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         jPanelFundoCinza3.setBackground(new java.awt.Color(243, 247, 251));
@@ -277,6 +284,9 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel41.setBackground(new java.awt.Color(153, 153, 153));
 
         AvisoNome.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
@@ -318,7 +328,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jButtonOlho.setBackground(new java.awt.Color(255, 255, 255));
         jButtonOlho.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonOlho.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonOlho.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20)); // NOI18N
+        jButtonOlho.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20));
         jButtonOlho.setBorder(null);
         jButtonOlho.setBorderPainted(false);
         jButtonOlho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -416,7 +426,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jButtonOlho3.setBackground(new java.awt.Color(255, 255, 255));
         jButtonOlho3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButtonOlho3.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonOlho3.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20)); // NOI18N
+        jButtonOlho3.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/olho_20px.svg", 20, 20));
         jButtonOlho3.setBorder(null);
         jButtonOlho3.setBorderPainted(false);
         jButtonOlho3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -440,6 +450,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         AvisoTelefone.setText("*");
 
         jComboSetor.setBackground(new java.awt.Color(255, 255, 255));
+        jComboSetor.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboSetor.setForeground(new java.awt.Color(0, 0, 0));
         jComboSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "       ", "Administração", "Informática", "Recursos Humanos", "Comercial/Vendas", "Marketing", "Logística", "Operacional", "Outros..." }));
         jComboSetor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -652,8 +663,10 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void jButtonOlhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOlhoActionPerformed
         olhoVisivel = !olhoVisivel;
         if(olhoVisivel){
+            jtxtSenha.setEchoChar((char) 0);
             jButtonOlho.setIcon(olhoFechado);
         }else{
+            jtxtSenha.setEchoChar(caractereSenha);
             jButtonOlho.setIcon(olhoAberto);
 
         }
@@ -740,7 +753,14 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonOlho3MouseClicked
 
     private void jButtonOlho3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOlho3ActionPerformed
-        // TODO add your handling code here:
+        olhoConfirmacaoVisivel = !olhoConfirmacaoVisivel;
+        if (olhoConfirmacaoVisivel) {
+            txtSenhaConf.setEchoChar((char) 0);
+            jButtonOlho3.setIcon(olhoFechado);
+        } else {
+            txtSenhaConf.setEchoChar(caractereSenhaConfirmacao);
+            jButtonOlho3.setIcon(olhoAberto);
+        }
     }//GEN-LAST:event_jButtonOlho3ActionPerformed
 
     private void jComboSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSetorActionPerformed

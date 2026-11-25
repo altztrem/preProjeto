@@ -23,8 +23,9 @@ import javax.swing.JOptionPane;
      * Creates new form TelaDetalhesChamado
      */
     public  TelaDetalhesChamado(int idChamado) {
-        setSize(441, 705);
         initComponents();
+        setSize(932, 711);
+        setResizable(false);
         setLocationRelativeTo(this);
          ChamadoDao dao = new ChamadoDao();
          DataChamado c = dao.BuscarChamado(idChamado);
@@ -334,14 +335,14 @@ import javax.swing.JOptionPane;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
 
         pack();

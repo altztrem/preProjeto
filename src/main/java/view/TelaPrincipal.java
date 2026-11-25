@@ -22,6 +22,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.Icon olhoAberto;
     private javax.swing.Icon olhoFechado;
     private boolean olhoVisivel;
+    private char caractereSenha;
    DataUsuario dtUser =  new DataUsuario();
     
     
@@ -35,6 +36,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        caractereSenha = txtSenha.getEchoChar();
         setSize(668, 523);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -525,8 +527,10 @@ if (perfil == null) {
     private void jButtonOlhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOlhoActionPerformed
        olhoVisivel = !olhoVisivel;
        if(olhoVisivel){
+       txtSenha.setEchoChar((char) 0);
        jButtonOlho.setIcon(olhoFechado);
        }else{
+       txtSenha.setEchoChar(caractereSenha);
        jButtonOlho.setIcon(olhoAberto);
        
        }

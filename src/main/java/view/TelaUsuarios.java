@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author gablinux
  */
 public class TelaUsuarios extends javax.swing.JFrame {
+    private TelaGerenciarUsuario janelaGerenciarAtual;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaUsuarios.class.getName());
 
@@ -25,6 +26,9 @@ public class TelaUsuarios extends javax.swing.JFrame {
     public TelaUsuarios() {
         
         initComponents();
+        
+        setResizable(false);
+        setLocationRelativeTo(null);
         ListarUsuario();
        
         UsuarioDao usuarioDao = new UsuarioDao();
@@ -88,6 +92,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        jButtonAtualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -630,7 +635,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabel20)
                 .addGap(175, 175, 175)
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(jLabel22)
                 .addGap(187, 187, 187)
                 .addComponent(jLabel23)
@@ -699,27 +704,38 @@ public class TelaUsuarios extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
+        jButtonAtualizar.setBackground(new java.awt.Color(0, 120, 231));
+        jButtonAtualizar.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/refresh_branco_24.svg", 24, 24));
+        jButtonAtualizar.setToolTipText("Atualizar usuários");
+        jButtonAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel55)
-                .addGap(1181, 1181, 1181))
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel55)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel55)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -745,7 +761,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel54)
                             .addComponent(jLabel53))
                         .addContainerGap(27, Short.MAX_VALUE))))
@@ -756,9 +772,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BarraLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(0, 0, 0))
+                    .addComponent(BarraLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel53)
@@ -906,9 +920,12 @@ public class TelaUsuarios extends javax.swing.JFrame {
             jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
              int idUsuario = (int) jTable.getModel().getValueAt(jTable.convertRowIndexToModel(linha), 0);
             JOptionPane.showMessageDialog(null, idUsuario);
-            TelaGerenciarUsuario telaGerenciarUsuario = new TelaGerenciarUsuario(idUsuario);
-            telaGerenciarUsuario.setLocationRelativeTo(this);
-            telaGerenciarUsuario.setVisible(true);
+            if (janelaGerenciarAtual != null) {
+                janelaGerenciarAtual.dispose();
+            }
+            janelaGerenciarAtual = new TelaGerenciarUsuario(idUsuario);
+            janelaGerenciarAtual.setLocationRelativeTo(this);
+            janelaGerenciarAtual.setVisible(true);
 
         }else{
             jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -986,6 +1003,14 @@ public class TelaUsuarios extends javax.swing.JFrame {
     }
 
 
+    private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
+        ListarUsuario();
+        UsuarioDao dao = new UsuarioDao();
+        jLabelTotalUsuarios.setText(String.valueOf(dao.qtdTotalUsuario()));
+        jLabelAdministradores.setText(String.valueOf(dao.qtdAdministrador()));
+        jLabelTecnicos.setText(String.valueOf(dao.qtdTecnico()));
+    }//GEN-LAST:event_jButtonAtualizarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraLateral;
     private javax.swing.JPanel JPanelInicio;
@@ -993,6 +1018,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel iconeAdministradores;
     private javax.swing.JLabel iconeTecnico;
     private javax.swing.JLabel iconeTotalUsuario;
+    private javax.swing.JButton jButtonAtualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;

@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author gablinux
  */
 public class UsuarioDashboard extends javax.swing.JFrame {
+    private TelaDetalhesChamado janelaDetalhesAtual;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(UsuarioDashboard.class.getName());
     TelaPrincipal telaPrincipal = new TelaPrincipal();
@@ -31,6 +32,8 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         
         initComponents();
         
+        setResizable(false);
+        setLocationRelativeTo(null);
         ListarChamados();
         estilizarTabela();
   
@@ -105,6 +108,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        jButtonAtualizar = new javax.swing.JButton();
         jComboStatus = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -782,26 +786,40 @@ public class UsuarioDashboard extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(4).setHeaderValue("");
         }
 
+        jButtonAtualizar.setBackground(new java.awt.Color(0, 120, 231));
+        jButtonAtualizar.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/refresh_branco_24.svg", 24, 24));
+        jButtonAtualizar.setToolTipText("Atualizar chamados");
+        jButtonAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(1184, 1184, 1184))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(7, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(1022, 1022, 1022)
+                        .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1))))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel6)
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -905,8 +923,8 @@ public class UsuarioDashboard extends javax.swing.JFrame {
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 71, Short.MAX_VALUE))
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 83, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel3)
@@ -1100,9 +1118,12 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     if (linha >= 0 && coluna == 4) {
     jTable.setCursor(new Cursor(Cursor.HAND_CURSOR));
     int idChamado = (int) jTable.getValueAt(linha,0);
-   TelaDetalhesChamado detalhes = new TelaDetalhesChamado(idChamado);
-        detalhes.setLocationRelativeTo(this);
-        detalhes.setVisible(true);
+    if (janelaDetalhesAtual != null) {
+        janelaDetalhesAtual.dispose();
+    }
+    janelaDetalhesAtual = new TelaDetalhesChamado(idChamado);
+    janelaDetalhesAtual.setLocationRelativeTo(this);
+    janelaDetalhesAtual.setVisible(true);
 
 
 
@@ -1222,6 +1243,14 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     }
 }
   
+    private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
+        ListarChamados();
+        qtdAberto.setText(String.valueOf(ChamadoDao.qtdAberto(DataUsuario.idUsuarioLogado)));
+        qtdAndamento.setText(String.valueOf(ChamadoDao.qtdAndamento(DataUsuario.idUsuarioLogado)));
+        qtdConcluido.setText(String.valueOf(ChamadoDao.qtdConcluido(DataUsuario.idUsuarioLogado)));
+        qtdTotal.setText(String.valueOf(ChamadoDao.qtdTotal(DataUsuario.idUsuarioLogado)));
+    }//GEN-LAST:event_jButtonAtualizarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraLateral;
     private javax.swing.JPanel JPanelInicio;
@@ -1230,6 +1259,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel iconeAberto;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonAtualizar;
     private javax.swing.JComboBox<String> jComboStatus;
     private javax.swing.JComboBox<String> jComboStatus1;
     private javax.swing.JLabel jLabel1;

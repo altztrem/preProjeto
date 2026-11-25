@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author gablinux
  */
 public class TelaGerenciarChamado extends javax.swing.JFrame {
+    private int idChamado;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaGerenciarChamado.class.getName());
 
@@ -21,15 +22,19 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
      */
     public TelaGerenciarChamado(int idChamado) {
         initComponents();
+        this.idChamado = idChamado;
+        setSize(806, 810);
+        setResizable(false);
+        setLocationRelativeTo(null);
+        
         atualizarIcones();
           ChamadoDao dao = new ChamadoDao();
          DataChamado c = dao.BuscarChamado(idChamado);
-         detalhesChamado(c);
-
     if (c != null) {
         detalhesChamado(c);
     } else {
-            JOptionPane.showMessageDialog(this, "Usuário não encontrado.");
+            JOptionPane.showMessageDialog(this, "Chamado não encontrado.");
+            btnSalvar.setEnabled(false);
         }
     }
 
@@ -146,8 +151,18 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
         btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btnSalvar.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/confirmar_branco_20.svg", 20, 20));
         btnSalvar.setText("Salvar alterações");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         lblCategoria.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         lblCategoria.setForeground(new java.awt.Color(23, 43, 67));
@@ -161,7 +176,7 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
             }
         });
 
-        comboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione o Status", "Aberto", "Atendimento", "Concluido", " " }));
+        comboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione o Status", "Aberto", "Andamento", "Concluido" }));
         comboStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboStatusActionPerformed(evt);
@@ -303,6 +318,25 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if (comboCategoria.getSelectedIndex() == 0 || comboStatus.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Selecione uma categoria e um status.");
+            return;
+        }
+        DataChamado chamado = new DataChamado();
+        chamado.setIdChamado(idChamado);
+        chamado.setDescricao(txtDescricao.getText());
+        chamado.setCategoria(String.valueOf(comboCategoria.getSelectedItem()));
+        chamado.setPrioridade(String.valueOf(comboPrioridade.getSelectedItem()));
+        chamado.setStatusChamado(String.valueOf(comboStatus.getSelectedItem()));
+        ChamadoDao dao = new ChamadoDao();
+        dao.update(chamado);
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     private void comboCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCategoriaActionPerformed
         atualizarIconeCategoria();
     }//GEN-LAST:event_comboCategoriaActionPerformed
@@ -353,7 +387,7 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
         String icone;
         switch (item) {
             case "Aberto": icone = "abertos_24.svg"; break;
-            case "Atendimento": icone = "em-andamento_24.svg"; break;
+            case "Andamento": icone = "em-andamento_24.svg"; break;
             case "Concluido": icone = "concluidos_24.svg"; break;
             default: icone = "icone_relogio_64px.svg";
         }

@@ -26,7 +26,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         
         initComponents();
         
-        
+        setSize(1351, 748);
         setResizable(false);
         setLocationRelativeTo(null);
         

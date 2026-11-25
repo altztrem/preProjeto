@@ -47,6 +47,28 @@ public class ChamadoDao {
         
         }
     }
+    public void update(DataChamado chamado) {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE chamado SET descricao = ?, categoria = ?, prioridade = ?, statusChamado = ? WHERE idChamado = ?");
+            stmt.setString(1, chamado.getDescricao());
+            stmt.setString(2, chamado.getCategoria());
+            stmt.setString(3, chamado.getPrioridade());
+            stmt.setString(4, chamado.getStatusChamado());
+            stmt.setInt(5, chamado.getIdChamado());
+            if (stmt.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Chamado atualizado com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Chamado não encontrado ou sem alterações.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Algo deu errado: " + ex.getMessage());
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
+
     public List<DataChamado> Lista(int IdUsuario){
       Connection con = ConnectionFactory.getConnection();
       PreparedStatement stmt = null;

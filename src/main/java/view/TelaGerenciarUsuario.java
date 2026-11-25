@@ -20,6 +20,10 @@ public class TelaGerenciarUsuario extends javax.swing.JFrame {
    private  int idUsuario;
     public TelaGerenciarUsuario(int idUsuario) {
         initComponents();
+        
+        setResizable(false);
+        setLocationRelativeTo(null);
+        
        this.idUsuario = idUsuario;
            
         UsuarioDao dao = new UsuarioDao();

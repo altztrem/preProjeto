@@ -21,6 +21,9 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
      */
     public TelaMeuPerfil() {
         initComponents();
+    
+        setResizable(false);
+       
         setLocationRelativeTo(null);
         UsuarioDao dao = new UsuarioDao();
         DataUsuario d = dao.BuscarUsuario(DataUsuario.idUsuarioLogado);
@@ -45,6 +48,10 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtEmail1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -82,15 +89,102 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/usuario_20px.svg", 20, 20));
+        jLabel11.setText("Senha Atual");
+
+        txtNome1.setBackground(new java.awt.Color(255, 255, 255));
+        txtNome1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNome1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNome1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
+        txtNome1.setEnabled(false);
+        txtNome1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNome1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNome1FocusLost(evt);
+            }
+        });
+        txtNome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNome1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtNome1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtNome1MouseReleased(evt);
+            }
+        });
+        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome1ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_email_20.svg", 20, 20));
+        jLabel12.setText("Nova  Senha");
+
+        txtEmail1.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtEmail1.setForeground(new java.awt.Color(0, 0, 0));
+        txtEmail1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(213, 223, 235)));
+        txtEmail1.setEnabled(false);
+        txtEmail1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmail1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmail1FocusLost(evt);
+            }
+        });
+        txtEmail1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEmail1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtEmail1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtEmail1MouseReleased(evt);
+            }
+        });
+        txtEmail1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmail1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtNome1, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                        .addComponent(jLabel11))
+                    .addComponent(jLabel12)
+                    .addComponent(txtEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Segurança", jPanel4);
@@ -567,6 +661,54 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
         txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
     }//GEN-LAST:event_txtTelefoneFocusGained
 
+    private void txtNome1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNome1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1FocusGained
+
+    private void txtNome1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNome1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1FocusLost
+
+    private void txtNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1MouseClicked
+
+    private void txtNome1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1MouseExited
+
+    private void txtNome1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1MouseReleased
+
+    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1ActionPerformed
+
+    private void txtEmail1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmail1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1FocusGained
+
+    private void txtEmail1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmail1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1FocusLost
+
+    private void txtEmail1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1MouseClicked
+
+    private void txtEmail1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1MouseExited
+
+    private void txtEmail1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmail1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1MouseReleased
+
+    private void txtEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmail1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -620,6 +762,8 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboSetor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -638,7 +782,9 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
