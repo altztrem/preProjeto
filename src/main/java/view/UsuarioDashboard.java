@@ -36,6 +36,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         ListarChamados();
         estilizarTabela();
+        EstiloTabela.estilizarBotao(jTable, 4);
   
         setResizable(false);
         setLocationRelativeTo(null);
@@ -343,7 +344,7 @@ public class UsuarioDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelPerfil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

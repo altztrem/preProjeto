@@ -29,6 +29,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         
         ListarChamados();
+        EstiloTabela.estilizarBotao(jTable, 5);
         
         
         
@@ -330,7 +331,7 @@ public class TecnicoDashboard extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelPerfil1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

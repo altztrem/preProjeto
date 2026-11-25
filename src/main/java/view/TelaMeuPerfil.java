@@ -91,7 +91,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/usuario_20px.svg", 20, 20));
+        jLabel11.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_senha_20.svg", 20, 20));
         jLabel11.setText("Senha Atual");
 
         txtNome1.setBackground(new java.awt.Color(255, 255, 255));
@@ -126,7 +126,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_email_20.svg", 20, 20));
+        jLabel12.setIcon(new com.formdev.flatlaf.extras.FlatSVGIcon("icons/perfil_senha_20.svg", 20, 20));
         jLabel12.setText("Nova  Senha");
 
         txtEmail1.setBackground(new java.awt.Color(255, 255, 255));
@@ -446,7 +446,7 @@ public class TelaMeuPerfil extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")));
         jLabel2.setText("Meu Perfil");
 

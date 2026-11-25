@@ -26,7 +26,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         
         initComponents();
         
-        setSize(1351, 748);
+       
         setResizable(false);
         setLocationRelativeTo(null);
         
@@ -274,7 +274,7 @@ public class TelaNovoChamado extends javax.swing.JFrame {
         jPanelPerfilLayout.setHorizontalGroup(
             jPanelPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPerfilLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelPerfil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

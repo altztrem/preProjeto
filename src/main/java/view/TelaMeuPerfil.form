@@ -222,7 +222,7 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new com.formdev.flatlaf.extras.FlatSVGIcon(&quot;icons/usuario_20px.svg&quot;, 20, 20)" type="code"/>
+                      <Connection code="new com.formdev.flatlaf.extras.FlatSVGIcon(&quot;icons/perfil_senha_20.svg&quot;, 20, 20)" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Senha Atual"/>
                   </Properties>
@@ -265,7 +265,7 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new com.formdev.flatlaf.extras.FlatSVGIcon(&quot;icons/perfil_email_20.svg&quot;, 20, 20)" type="code"/>
+                      <Connection code="new com.formdev.flatlaf.extras.FlatSVGIcon(&quot;icons/perfil_senha_20.svg&quot;, 20, 20)" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nova  Senha"/>
                   </Properties>
@@ -767,7 +767,7 @@
                   <Font name="Segoe UI" size="36" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/icons/syncdesk_logo_64.png&quot;))" type="code"/>

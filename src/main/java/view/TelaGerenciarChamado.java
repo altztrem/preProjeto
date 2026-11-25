@@ -48,6 +48,7 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        painelCabecalho = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblAssunto = new javax.swing.JLabel();
         lblDados = new javax.swing.JLabel();
@@ -76,13 +77,15 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblTitulo.setBackground(new java.awt.Color(0, 120, 231));
+        lblTitulo.setOpaque(true);
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(23, 43, 67));
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncdesk_logo_64.png")).getImage().getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH)));
         lblTitulo.setText("Gerenciar chamado");
 
         lblAssunto.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        lblAssunto.setForeground(new java.awt.Color(23, 43, 67));
+        lblAssunto.setForeground(new java.awt.Color(255, 255, 255));
         lblAssunto.setText("Laboratório sem internet  •  Chamado #12");
 
         lblDados.setBackground(new java.awt.Color(220, 236, 255));
@@ -189,10 +192,30 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
         lblNome.setText("Nome");
         lblNome.setOpaque(true);
 
+        painelCabecalho.setBackground(new java.awt.Color(0, 120, 231));
+        javax.swing.GroupLayout painelCabecalhoLayout = new javax.swing.GroupLayout(painelCabecalho);
+        painelCabecalho.setLayout(painelCabecalhoLayout);
+        painelCabecalhoLayout.setHorizontalGroup(
+            painelCabecalhoLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAssunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+        );
+        painelCabecalhoLayout.setVerticalGroup(
+            painelCabecalhoLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,8 +224,6 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
                     .addComponent(lblComentarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,10 +276,7 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(lblAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addComponent(lblDados, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -441,6 +459,7 @@ public class TelaGerenciarChamado extends javax.swing.JFrame {
     private javax.swing.JComboBox comboPrioridade;
     private javax.swing.JComboBox comboStatus;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel painelCabecalho;
     private javax.swing.JLabel lblAssunto;
     private javax.swing.JLabel lblAtendimento;
     private javax.swing.JLabel lblCategoria;

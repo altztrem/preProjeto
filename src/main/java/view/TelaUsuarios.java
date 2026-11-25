@@ -36,6 +36,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jLabelAdministradores.setText(String.valueOf(usuarioDao.qtdAdministrador()));
         jLabelTecnicos.setText(String.valueOf(usuarioDao.qtdTecnico()));
         jTable.removeColumn(jTable.getColumnModel().getColumn(0));
+        EstiloTabela.estilizarBotao(jTable, 4);
     }
 
     /**
